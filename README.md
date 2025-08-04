@@ -31,14 +31,14 @@ The pipeline of works to develop the model is the following:
 
 ## Repository Layout
 
-├── README.md # Project description + Overview
-├── LICENSE # License (Apache)
-├── requirements.txt
-├── src/
-│ ├── data/ # Raw, MSA, and processed data (see src/data/README.md)
-│ ├── scripts/ # Processing / training / evaluation scripts (see src/scripts/README.md)
-│ ├── model/ # Saved calibrated model(s)
-│ └── results/ # Evaluation summaries and figures
+README.md # Project description + Overview
+LICENSE # License (Apache)
+requirements.txt
+src/
+  data/ # Raw, MSA, and processed data (see src/data/README.md)
+  scripts/ # Processing / training / evaluation scripts (see src/scripts/README.md)
+  model/ # Saved calibrated model(s)
+  results/ # Evaluation summaries and figures
 
 ## Prerequisites
 

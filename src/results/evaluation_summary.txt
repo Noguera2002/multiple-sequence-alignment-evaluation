@@ -1,3 +1,0 @@
-Total pairs         : 4692
-Confident pairs     : 599 (12.8% coverage)
-Precision@80%+ confidence: 0.846

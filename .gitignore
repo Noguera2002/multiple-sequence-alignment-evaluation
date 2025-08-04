@@ -211,3 +211,6 @@ src/data/raw/
 src/data/msa/
 src/data/processed/
 src/results/
+
+# VScode ignore 
+.vscode/ 

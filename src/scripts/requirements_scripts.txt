@@ -1,0 +1,17 @@
+
+This environment contains everything needed to run all scripts, train the model, and evaluate it, including plotting if desired.
+
+# Core Python libraries
+pandas
+numpy
+biopython
+joblib
+scikit-learn
+
+# Optional but recommended for evaluation & plotting
+matplotlib
+scipy
+statsmodels
+
+# If parallel SP computation is needed (compute_sp_alltools.py)
+tqdm

@@ -1,0 +1,6 @@
+# requirements_main.txt
+pandas
+numpy
+scikit-learn
+joblib
+biopython

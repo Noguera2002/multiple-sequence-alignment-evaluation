@@ -1,0 +1,13 @@
+# Python libraries required for data preparation
+biopython
+pandas
+regex
+
+# External MSA tools required to generate new alignments
+Install via apt, conda, or official websites
+
+# Tested versions:
+- MAFFT v7.490 (2021/Oct/30)
+- Muscle v3.8.1551
+- Clustal Omega 1.2.4
+- T-Coffee Version_13.41.0.28bdc39 (2019-11-30)

@@ -14,7 +14,7 @@ Confidence is calibrated, so a probability of 0.8 means that about 8 out of 10 s
 ## Overview
 
 The repository explains the development of this model.
-The pipeline of works to develop the model is the following:
+The pipeline of works is the following:
 - Extract and filter seed families from Rfam.
 - MSA generation with tools (MAFFT, Clustal Omega, T-coffee, Muscle) + MSA from Rfam
 - Compute descriptive alignment metrics and SP (sum of pairs) scores.  
@@ -24,21 +24,20 @@ The pipeline of works to develop the model is the following:
 
 ## Highlights
 
-- Calibrated probabilistic output: confidence scores reflect empirical accuracy.  
-- Thresholding enables trading coverage for precision—users can choose conservatively reliable comparisons.  
+- Calibrated probabilistic output: confidence scores reflect empirical accuracy.    
 - Simple model (logistic regression + interactions) keeps interpretability.  
 - Family-size filtering improves usable confident coverage.
 
 ## Repository Layout
 
-README.md # Project description + Overview
-LICENSE # License (Apache)
-requirements.txt
-src/
-  data/ # Raw, MSA, and processed data (see src/data/README.md)
-  scripts/ # Processing / training / evaluation scripts (see src/scripts/README.md)
-  model/ # Saved calibrated model(s)
-  results/ # Evaluation summaries and figures
+- README.md # Project description + Overview
+- LICENSE # License (Apache)
+- requirements_main.txt
+- src/
+  - data/ # Raw, MSA, and processed data (see src/data/README.md)
+  - scripts/ # Processing / training / evaluation scripts (see src/scripts/README.md)
+  - model/ # Saved calibrated model(s)
+  - results/ # Evaluation summaries and figures
 
 ## Prerequisites
 

@@ -2,10 +2,10 @@
 
 This directory contains all the Python scripts for:
 
-**1. Computing MSA metrics**
-**2. Preparing pairwise feature datasets**
-**3. Training and calibrating the logistic regression model**
-**4. Evaluating and predicting with the trained model**
+1. **Computing MSA metrics**
+2. **Preparing pairwise feature datasets**
+3. **Training and calibrating the logistic regression model**
+4. **Evaluating and predicting with the trained model**
 
 ---
 

@@ -1,5 +1,4 @@
-
-This environment contains everything needed to run all scripts, train the model, and evaluate it, including plotting if desired.
+# This environment contains everything needed to run all scripts, train the model, and evaluate it, including plotting if desired.
 
 # Core Python libraries
 numpy 1.26.4

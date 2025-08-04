@@ -1,7 +1,6 @@
 # Python libraries required for data preparation
-biopython
-pandas
-regex
+biopython 1.83
+pandas 2.2.1
 
 # External MSA tools required to generate new alignments
 Install via apt, conda, or official websites

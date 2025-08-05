@@ -53,8 +53,8 @@ Interpretation for the user:
 ## Results
 
 On the held-out test set:
-- Precision at 0.8 confidence: 84.6%
-- Coverage at 0.8 confidence: 12.8%
+- Precision at 0.8 confidence: 85.2%
+- Coverage at 0.8 confidence: 13.7%
 - Calibration and precision/coverage plots are in src/results/.
 - High-confidence predictions allow conservative, reliable comparisons of alignments.
 

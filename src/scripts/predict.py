@@ -1,79 +1,65 @@
 #!/usr/bin/env python3
 """
-predict.py (antisymmetric, no interactions)
+predict.py — antisymmetric, no interactions, no sklearn warnings.
 
-Compare two MSAs with the trained calibrated model and output
-P(MSA1 > MSA2). Builds ONLY the linear delta_* features, in the
-exact order saved in the model (feature_names_).
+Builds ONLY the linear delta_* features the model expects, in the exact
+order saved as model.feature_names_. Passes a NumPy array to avoid
+'X has feature names' warnings from scikit-learn.
 """
 
-import sys
 import argparse
-import pandas as pd
 import joblib
+import numpy as np
 from pathlib import Path
 
-# Reuse metric code
+# reuse your metrics helpers
 from metrics import compute_metrics, read_alignment
-
-ID_COLS = {"Family","family","Source","tool","Filename","filename"}
 
 def compute_metrics_for_file(msa_file, tool_label="MSA", family_label="Query"):
     seqs = read_alignment(msa_file)
-    mets = compute_metrics(seqs)
-    return {
-        **mets,
-        "Family": family_label,
-        "Source": tool_label,
-        "Filename": Path(msa_file).name
-    }
+    return compute_metrics(seqs)  # returns a dict of numeric metrics
 
-def infer_metric_cols(df: pd.DataFrame):
-    cols = []
-    for c in df.columns:
-        if c in ID_COLS:
-            continue
-        if pd.api.types.is_numeric_dtype(df[c]):
-            cols.append(c)
-    return cols
-
-def build_delta_frame(m1: dict, m2: dict, feature_names):
+def build_X_from_two_msas(m1: dict, m2: dict, feature_names):
     """
-    Build a single-row DataFrame with columns exactly = feature_names.
-    feature_names are like ['delta_Gap','delta_Match',...]
+    Build a single-row NumPy array with columns exactly feature_names.
+    feature_names are like ['delta_Gap', 'delta_Match', ...]
     """
     # raw deltas for all numeric metrics present
-    df_tmp = pd.DataFrame([m1, m2])
-    metric_cols = infer_metric_cols(df_tmp)
-    deltas = {f"delta_{k}": float(m1[k]) - float(m2[k]) for k in metric_cols}
+    deltas = {}
+    for k, v in m1.items():
+        if isinstance(v, (int, float)) and k in m2:
+            try:
+                deltas[f"delta_{k}"] = float(m1[k]) - float(m2[k])
+            except Exception:
+                pass
 
-    # create X row with the trained feature order; fill missing with 0.0
-    row = {name: deltas.get(name, 0.0) for name in feature_names}
-    return pd.DataFrame([row])
+    # assemble in trained order; fill missing with 0.0
+    row = [deltas.get(name, 0.0) for name in feature_names]
+    return np.array([row], dtype=float)
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("msa1", help="Path to first MSA (FASTA)")
     ap.add_argument("msa2", help="Path to second MSA (FASTA)")
-    ap.add_argument("--model", default="models/logreg_calibrated.joblib",
+    ap.add_argument("--model", default="src/model/model_SPall_sigC3.joblib",
                     help="Path to trained calibrated model (.joblib)")
     args = ap.parse_args()
 
-    # Load model and its feature order
+    # Load model & feature order
     model = joblib.load(args.model)
     feature_names = getattr(model, "feature_names_", None)
     if not feature_names:
-        sys.exit("Model missing feature_names_. Retrain with updated train_and_calibrate.py")
+        raise SystemExit("Model missing feature_names_. Retrain with updated train_and_calibrate.py")
 
     # Compute metrics for both MSAs
     m1 = compute_metrics_for_file(args.msa1, tool_label="MSA1")
     m2 = compute_metrics_for_file(args.msa2, tool_label="MSA2")
 
-    # Build delta features in the exact trained order
-    X = build_delta_frame(m1, m2, feature_names)
+    # Build NumPy X in the exact expected order
+    X = build_X_from_two_msas(m1, m2, feature_names)
 
     # Predict P(MSA1 > MSA2)
-    prob = float(model.predict_proba(X)[:,1][0])
+    prob = float(model.predict_proba(X)[:, 1][0])
 
     print(f"P(MSA1 > MSA2) = {prob:.3f}")
     print("Interpretation:")

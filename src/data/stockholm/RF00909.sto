@@ -1,0 +1,61 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00909
+#=GF ID   mir-883
+#=GF DE   mir-883 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   85.00
+#=GF TC   85.50
+#=GF NC   83.30
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   MIPF; MIPF0000389;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   17604727
+#=GF RT   A mammalian microRNA expression atlas based on small RNA library
+#=GF RT   sequencing.
+#=GF RA   Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S,
+#=GF RA   Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V,
+#=GF RA   Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B,
+#=GF RA   Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G,
+#=GF RA   Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di
+#=GF RA   Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN,
+#=GF RA   Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo
+#=GF RA   JJ, Sander C, Zavolan M, Tuschl T
+#=GF RL   Cell. 2007;129:1401-1414.
+#=GF RN   [2]
+#=GF RM   17989215
+#=GF RT   RNA sequence analysis defines Dicer's role in mouse embryonic stem cells.
+#=GF RA   Calabrese JM, Seila AC, Yeo GW, Sharp PA
+#=GF RL   Proc Natl Acad Sci U S A. 2007;104:18097-18102.
+#=GF RN   [3]
+#=GF RM   20215419
+#=GF RT   MicroRNA transcriptome in the newborn mouse ovaries determined by massive
+#=GF RT   parallel sequencing.
+#=GF RA   Ahn HW, Morin RD, Zhao H, Harris RA, Coarfa C, Chen ZJ, Milosavljevic A,
+#=GF RA   Marra MA, Rajkovic A
+#=GF RL   Mol Hum Reprod. 2010;16:463-471.
+#=GF RN   [4]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF CC   Family represents the microRNA (miRNA) precursor mir-883 imported from
+#=GF CC   miRBase.
+#=GF WK   MicroRNA
+#=GF SQ   3
+
+
+URS000075DB13_10090/1-76 -GCACUAUAAUGCUGAGAG-AAGUAGCAGUUACUUUAUUCUAU-AAGUAACUGCAACAGCUCUCAGUAUUGUAAGGCUC
+URS000063A31B_10116/1-77 UGCACU-CAAUGCUGAGAG-AAGUAGCAGUUACUUUUUACUCUUAAGUAACUGCAACAUCUCUCAGUAUUGUAAGGCUC
+URS000069D263_10090/1-78 UGCAAUGCAUUACUGAGAAUGGGUAGCAGUCACUUUGUACUAU-GAGUAACUGCAACAUCUCUCAGUAUUGUAAGGUUC
+#=GC SS_cons             :<<--<<<<<<<<<<<<<<.--<<-<<<<<<<<<<________.>>>>>>>>>>->>-->>>>>>>>>>>>>>-->>::
+#=GC RF                  UGCAcugcaauaCuGaGaG.aaGuAGCaGuuaCuuUaUaCUaU.aaGuaaCuGCAaCAuCuCuCaGuauugcaAGGCUC
+//

@@ -1,0 +1,39 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02518
+#=GF ID   mir-2494
+#=GF DE   mir-2494 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   140.00
+#=GF TC   143.80
+#=GF NC   112.40
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   MIPF; MIPF0000975;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF RN   [1]
+#=GF RM   21712066
+#=GF RT   Mirtrons: microRNA biogenesis via splicing.
+#=GF RA   Westholm JO, Lai EC
+#=GF RL   Biochimie. 2011;93:1897-1904.
+#=GF RN   [2]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF WK   MicroRNA
+#=GF SQ   2
+
+
+URS00006757F7_7227/3-115 CAUCUUCCGACCGGCGAUCAGUAAGUGCACCAGAUUGGGAAUAACCUUCAAAAGCUGCAACUUAAAUAUUCCCAGUAAUGUCCACUUACAAGGAGCCCCUGGUUGGAUGGGUG
+URS0000D555B7_7240/1-113 CAUCUUCCGACCGGCGAUCAGUAAGUGCACCAGAUUGGGAAUAACCUUCAAAAGCUGCAACUUAAAUAUUCCCAGUAAUGUCCACUUACAAGGAGCCCCUGGUUGGAUGGGUG
+#=GC SS_cons             <<<<<<<<<<<<<<<-----<<<<<<<-<<---<<<<<<<<<<_______________________>>>>>>>>>>--->>->>>>>>>----->>>--->>>>>>>->>>>>
+#=GC RF                  CacCcuCCgaCCGGCGAUCAGuaaGuGCaCCAGacuGGGaauaACCUUCAAAAGCUGCAACUUAAAuauuCCCaguAAUGuCCaCuuaCAAGGAGCCCCUGGucGGaUgGguG
+//

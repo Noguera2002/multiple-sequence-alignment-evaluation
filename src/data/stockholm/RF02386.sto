@@ -1,0 +1,39 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02386
+#=GF ID   sau-19
+#=GF DE   Staphylococcus sRNA sau-19
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF SE   Eberhardt R
+#=GF SS   Predicted; mfold
+#=GF GA   80.00
+#=GF TC   102.90
+#=GF NC   55.90
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 29.88 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0000370; small_regulatory_ncRNA;
+#=GF RN   [1]
+#=GF RM   20151104
+#=GF RT   Identification of differentially expressed small non-protein-coding RNAs
+#=GF RT   in Staphylococcus aureus displaying both the normal and the small-colony
+#=GF RT   variant phenotype.
+#=GF RA   Abu-Qatouseh LF, Chinni SV, Seggewiss J, Proctor RA, Brosius J,
+#=GF RA   Rozhdestvensky TS, Peters G, von Eiff C, Becker K
+#=GF RL   J Mol Med (Berl). 2010;88:565-575.
+#=GF WK   Bacterial_small_RNA
+#=GF SQ   4
+
+
+
+ACHH02000004.1/11544-11470           GUUCUUUAGACAUUAAAAGCUUCUAACAUGAUAUGGAAUCCGAGGUUCCGAUAUCACAUUAGAAGCUUUUUUGUU
+#=GR ACHH02000004.1/11544-11470   PP ***************************************************************************
+AM990992.1/2620746-2620820           GUUCUUUAGACAUUAAAAGCUUCUAACAUGAUACGGAAUUUGAGAUUCCCAUAUCACAUUAGAAGCUUUUUUGUU
+#=GR AM990992.1/2620746-2620820   PP ***************************************************************************
+ACKI01000038.1/123063-122989         GUUCUUUAGACAUUAAAAGCUUCUAACAUGAUAUGGAAUCCAAGAUUCCGAUAUCAUGUUAGAAGCUUUUUUGUU
+#=GR ACKI01000038.1/123063-122989 PP ***************************************************************************
+CP001844.2/2558472-2558546           GUUCUUUAGACAUUAAAAGCUUCUAACAUGAUACGGAAUAUGAGGUUCCUGUAUCACAUUAGAAGCUUUUUUGUU
+#=GC SS_cons                         ::::::::<<<<--<<<<<<<<<<<<--<<<<<<<<<<<_____>>>>>->>>>>>-->>>>>>>>>>>>->>>>
+#=GC RF                              GUUCUUUAgaCaUUaaaaGCuuCuaaCAuGauacGGaauuugAGauuCCuguauCacAuuaGaaGCuuuuUuGuu
+//

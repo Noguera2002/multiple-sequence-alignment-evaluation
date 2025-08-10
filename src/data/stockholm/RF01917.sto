@@ -1,0 +1,44 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01917
+#=GF ID   MIR2587
+#=GF DE   microRNA MIR2587
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   75.50
+#=GF TC   75.50
+#=GF NC   75.20
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   MIPF; MIPF0000835;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   19767456
+#=GF RT   Genome-wide Medicago truncatula small RNA analysis revealed novel
+#=GF RT   microRNAs and isoforms differentially regulated in roots and nodules
+#=GF RA   Lelandais-Briere C, Naya L, Sallet E, Calenge F, Frugier F, Hartmann C,
+#=GF RA   Gouzy J, Crespi M
+#=GF RL   Plant Cell. 2009;21:2780-2796.
+#=GF RN   [2]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF WK   MicroRNA
+#=GF SQ   5
+
+
+URS00006FD60D_3880/6-99  GUGUCAUGGUCAUUGUUGACCGUUCAUAUGAACCCUGCAAUAGCAUUGCA-----GCUUGUGUGGGGUUCAUAUAACGGUCAACAGAGACCAUUGACAU
+URS0000D53DAD_3880/3-96  GUGUCAUGGUCAUUGUUGACCGUUCAUAUGAACCCUGCAAUAACAUUGCA-----ACUUGUGUGGGGUUCAUAUAACGGUCAACUGAGACCUUUGACAU
+URS0000D50035_3880/6-99  GUGUCAUGGUCAUUGUUGACCGUUCAUAUGAACCCUGCAAUAGCAUUGCA-----GCUUGUGUGGGGUUCAUAUAACGGUCAACAUAGACCAUUGACAU
+URS00006BE88F_3880/6-99  GUGUCAUGGUCAUUGUUGACCGUUCAUAUGAACCCUGCAAUAGCAUUGCA-----GCUUGUGUGGGGUUCAUAUAACGGUCAACAGAGACUCUUGACAU
+URS0000C82A27_3880/6-104 GUGUCAUGGUCAUUGUUGACCGUUCAUAUGAACCCUGCAAUUGCAAUGCAUUUUAACUUGUGUGGGGUUCAUAUAACGGUCAAUAGAGACCCUUGACAU
+#=GC SS_cons             <<<<<<-<<<<-<<<<<<<<<<<<-<<<<<<<<<<<<<<--<<_______....._>>-->>>>>>>>>>>>>>>>>>>>>>>>>>->>>>-->>>>>>
+#=GC RF                  guGucaUgGucAcuguuGaccGuucauauGaaccccgcaAUagcAuUGcA.....acuUGugcgggguuCauauaaCgguCaacagAgaCcaUugaCac
+//

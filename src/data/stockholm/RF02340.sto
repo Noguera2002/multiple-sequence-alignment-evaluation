@@ -1,0 +1,89 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02340
+#=GF ID   DENV_SLA
+#=GF DE   Dengue virus SLA
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF AU   Choi K; 0000-0003-0865-1265
+#=GF AU   Ontiveros-Palacios N; 0000-0001-8457-4455
+#=GF SE   Published; PMID:19004935
+#=GF SS   Published; PMID:19004935
+#=GF GA   50.50
+#=GF TC   50.50
+#=GF NC   40.10
+#=GF TP   Cis-reg;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 2958934 CM SEQDB
+#=GF CL   CL00129
+#=GF DR   GO; 0039694; viral RNA genome replication;
+#=GF DR   SO; 0000837; UTR_region;
+#=GF RN   [1]
+#=GF RM   19004935
+#=GF RT   Structural and functional studies of the promoter element for dengue virus
+#=GF RT   RNA replication.
+#=GF RA   Lodeiro MF, Filomatori CV, Gamarnik AV
+#=GF RL   J Virol. 2009;83:993-1008.
+#=GF RN   [2]
+#=GF RM   21994804
+#=GF RT   Functional RNA elements in the dengue virus genome.
+#=GF RA   Gebhard LG, Filomatori CV, Gamarnik AV
+#=GF RL   Viruses. 2011;3:1739-1756.
+#=GF RN   [3]
+#=GF RM   33953197
+#=GF RT   Structures of flavivirus RNA promoters suggest two binding modes with NS5
+#=GF RT   polymerase.
+#=GF RA   Lee E, Bujalowski PJ, Teramoto T, Gottipati K, Scott SD, Padmanabhan R,
+#=GF RA   Choi KH
+#=GF RL   Nat Commun. 2021;12:2530.
+#=GF RN   [4]
+#=GF RM   37478848
+#=GF RT   Structures of dengue virus RNA replicase complexes.
+#=GF RA   Osawa T, Aoki M, Ehara H, Sekine SI
+#=GF RL   Mol Cell. 2023;83:2781-2791.
+#=GF RN   [5]
+#=GF RM   35750488
+#=GF RT   Structure of the dengue virus RNA promoter.
+#=GF RA   Sun YT, Varani G
+#=GF RL   RNA. 2022;28:1210-1223.
+#=GF CC   Flavivirus stem-loop A (SLA) is a secondary structure present in the 5
+#=GF CC   prime untranslated (5'-UTR) region of viruses of the genus Flavivirus. SLA
+#=GF CC   structure was first proposed from enzymatic and chemical probing methods
+#=GF CC   [1,2] afterwards the 3D structure of Dengue (PDB:7LYF) and Zika (PDB:5U0B)
+#=GF CC   SLA viruses were reported [3]. SLA interacts with the nonstructural
+#=GF CC   protein 5 (NS5), where SLA functions as a promoter for viral RNA synthesis
+#=GF CC   by NS5 polymerase. The SLA secondary structure includes a bottom stem-loop
+#=GF CC   (previously reported as SL1 and SL2), a top stem-loop (previously reported
+#=GF CC   as SL3 and TL) and a side-loop (previously proposed as side SL). The side
+#=GF CC   SL variate in length between flaviviruses (Tick-borne flaviviruses present
+#=GF CC   a side SL >40nt), despite the lack of sequence conservation, deletion of
+#=GF CC   the side SL abolish replication in Dengue virus. It is proposed that the
+#=GF CC   side SL is essential to maintain the overall fold of Flavivirus SLA [3].
+#=GF WK   Flavivirus
+#=GF SQ   15
+
+
+NC_001474.2/1-70                          -AGUUGUUAGUCUACGUGGACC-GACAAAGACAGAUUCU-UU----GAGGGAGCU--AAG--CUCAACGUAGUUCUAACAG
+NC_001477.1/1-69                          -AGUUGUUAGUCUACGUGGACC-GACAAGAACA-GUUUCGAA----UCGGAAGCU---UG--CUUAACGUAGUUCUAACAG
+NC_001475.2/1-69                          -AGUUGUUAGUCUACGUGGACC-GACAAGAACA-GUUUCGAC----UCGGAAGCU---UG--CUUAACGUAGUGCUGACAG
+NC_002640.1/1-69                          -AGUUGUUAGUCUGUGUGGACC-GACAAGGACA-GUUCCAAA----UCGGAAGCU---UG--CUUAACACAGUUCUAACAG
+GQ398255.1/1-69                           -AGUUGUUAGUCUACGUGGACC-GACAAGAACA-GUUUCGAA----UCGGAAGCU---UG--CUUAACGUAGUUCUAACAG
+DQ863634.1/1-69                           -AGUUGUUAGUCUACGUGGACC-GACAAGAACA-GUUUCGAC----UCGGAAGCU---UG--CUUAACGUAGUGCUGACAG
+GQ398276.1/1-70                           -AGUUGUUAGUCUACGUGGACC-GACAAAGACAGAUUCU-UU----GAGGGAGCU--AAG--CUCAACGUAGUUCUAACAG
+GQ398256.1/1-69                           -AGUUGUUAGUCUGUGUGGACC-GACAAGGACA-GUUCCAAA----UCGGAAGCU---UG--CUUAACACAGUUCUAACAG
+NC_001563.2/1-75                          -AGUAGUUCGCCUGUGUGAGCU-GACAAACUUA-GUAGUGUUU-GUGAGGAUUAACAACA--AUUAACACAGUGCGAGCUG
+NC_001437.1/1-73                          -AGAAGUUUAUCUGUGUGAACU-UCUUGGCUUA-GUAUCGUUG--AGAAGAAUCG-AGAG--AUUAGUGCAGUUUAAACAG
+KU527068.1/1-71                           -AGUUGUUGAUCUGUGUGAAUCAGACUGCGACA-GUUCGAGU----UUGAAGCGA--AAG--CUAGCAACAGUAUCAACAG
+URS0002311981_11060/31-100                -AGCUGUUAGUCUACGUGGACC-GACAAAGACAGAUUCU-UU----GAGGGAGCU--AAG--CUCAACGUAGUUCUAACAG
+#=GR URS0002311981_11060/31-100 7LYF_A_SS ...(((((((.((((((.((((...((((((....)))..)).))..)).............)).))))))...)))))).
+URS0002311A29_64320/31-100                UAGCUGUUGAUCUGUGUGAAUCAGACUGCGACA-GUUCGAGU----UUGAAGCGA--AAG--CUAGCAACAGUAUCAAC--
+#=GR URS0002311A29_64320/31-100 7LYG_A_SS .....((((((((((((...(((((((.(((.....)))))))))).))..................))))...)))))).
+URS00023359CE_11053/2-70                  GAGUGGUUAGUCUACGUGGACC-GACAAGAC-----UUCGGUCGAAUCGGAAGGA-----AACUUAACGUAGUUCUAACC-
+#=GR URS00023359CE_11053/2-70   7UMC_A_SS ....((((((.((((((...((.((...(((.........)))...))))(((.........))).))))))..)))))).
+URS0002681453_32630/1-68                  GAGUUGUUAGUCUGUGUGGACC-GACAAGGACA-GUUCCAAA----UCGGAAGCU-----UGCUUAACACAGUUCUAAC--
+#=GR URS0002681453_32630/1-68   8GZP_S_SS .....(((((.((((((...((.((...(((.....))).......))))((((.......)))).))))))...))))).
+#=GR URS0002681453_32630/1-68   8GZQ_S_SS .....(((((.((((((...((.((...(((.....))).......))))((((.......)))).))))))...))))).
+#=GC SS_cons                              .::<<<<<-<-<<-<<<---<<.<<---<<<__.__>>>---....>>>>-----..---..--->>>->>>--->>>>>:
+#=GC RF                                   .AGuuGUuaGUCugugUGgACC.gaCAAggaCA.GUuccGuU....ucGGAAgcu..AaG..CUUAaagcAGUuCuAAcaG
+#=GC RNA_structural_elements              ===[Bottom=SL=5p]===[==========Top=SL============][===Side=SL===][=Bottom=SL=3p]=
+//

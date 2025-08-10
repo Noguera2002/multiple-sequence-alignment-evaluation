@@ -1,0 +1,45 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02374
+#=GF ID   YenS
+#=GF DE   Yersinia YenS sRNA
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF SE   Eberhardt R
+#=GF SS   Predicted; mfold
+#=GF GA   80.00
+#=GF TC   105.50
+#=GF NC   50.80
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.22 -Z 2958934 CM SEQDB
+#=GF DR   GO; 0009372; quorum sensing;
+#=GF DR   SO; 0000370; small_regulatory_ncRNA;
+#=GF RN   [1]
+#=GF RM   21362062
+#=GF RT   The quorum-hindered transcription factor YenR of Yersinia enterocolitica
+#=GF RT   inhibits pheromone production and promotes motility via a small non-coding
+#=GF RT   RNA.
+#=GF RA   Tsai CS, Winans SC
+#=GF RL   Mol Microbiol. 2011;80:556-571.
+#=GF WK   Quorum_sensing
+#=GF SQ   7
+
+
+
+AALE02000015.1/22232-22398           GCUUUACAGAAUUAGUUUUAA-AUAUAAUAGAGCUAAUAUCUUAGCGCACUAAUGCUAAGAAAGUUAGACUGCAAAGAAUAUAUUUUCGCCAACACCAGGGGAC--UUUUGUC-C--ACCAACACCAGGUUUUACCCUGCCAUCUGGAUGGCUUUACAUUCAGAUGGCGACUA
+#=GR AALE02000015.1/22232-22398   PP *********************.**********************************************************************************..******9.9..*****988************************************************
+AALC02000078.1/10597-10430           GCUUUAAACAAUUAGCUUUGA-AUAUAAUUGAACUAAUAUCUUAGCGCACAGAUGCCAAGAAAGUUAGUCUGAAAAGAAUAUAAUUUCGCCAAUACCAGGGGACUUUUUAAGUCC--AAUA-GUAC-CGUUUUACCCCGCCAUCUGGAUGUCUUUACAUUCAGAUGGCUGUAA
+#=GR AALC02000078.1/10597-10430   PP *********************.*****************************************************************************9966622555555555..5433.3554.5*********************************************
+AALD02000004.1/33982-33814           GCUUUAAACAAUUAGCUUUGA-AUAUAAUUGAACUAAUAUCUUAGCGCACAGAUGCCAAGAAAGUUAGUCUGAAAAGAAUAUAAUUUCGCCAAUACCAGGGGACUUUUUUGAGUCCAAC--AGUAC-CGUUUUACCCCGCCAUCUGGAUGCCUUUACAUUCAGAUGGCCGUAA
+#=GR AALD02000004.1/33982-33814   PP *********************.****************************************************************************999555336777777762255..67886.5*********************************************
+AALF02000003.1/253045-253210         GCUUUAAAUAAUUAGCUUUAA-AUAUUAUAGAACUACUAUAUUAGCGCACAGACGCUAAGAAAGUCAGUCCCAAAAGAAUAUAUUUUCGCCAACACCAGGGGAC-UUUUAGUCCC--GCAGAU---CUGUUUUACCCCGCCAUCUGGAUGCCUUUACAUUCAGAUGGCUGUAA
+#=GR AALF02000003.1/253045-253210 PP *********************.*****************************************************************************99998.3567899999..998885...77*********************************************
+ACCD01000001.1/400286-400452         GCUUUAUAGAAUU-GAUUUAACUUAUAAUAGAACUAGUAUAUUAGCGCACUGCCGCUAAAAAAGUUAGUCUGAUCAUAAUAUAUUUUCGCCAACACCAGGGGAC--UUUUAGUCC--ACCC-GUCUCAGCUUUACCCCGCCAUCUGGGUGCUUUUACAUUCAGGUGGCGAUUA
+#=GR ACCD01000001.1/400286-400452 PP *********9988.78888884579*******************************************************************************..98888888*..**86.788899*********************************************
+ACCB01000005.1/119796-119629         GCUUUAGAAAAUAAAUAUUGA-AUAUAAUAGAACUAAUAUCUUAGCUUACUAUUGCUAAGAAAGUUAGUCUGAAAAGAAUAAAUCUUCGCCAUCACCAGGGGACUUUUUAGUC-C--AC-AGUUAGUCGUUUUACCCCGCCAUCUGGAUGCCUUCACAUUCAGAUGGUCGUAA
+#=GR ACCB01000005.1/119796-119629 PP ******999998888889999.****************************************************************************999666216666655.7..88.7899*9***********************************************
+AM286415.1/1797931-1797764           GCUUUGCAGAAUUAGAUUUUA-AUAUAAUAGAACUAGUAUCUUAGCGCACUGCCGUUAAGAAAGUUAGUCUGAAAAGAAUAUAUUUUCGCCAACACCAGGGCAC--UUCAGAUUC--ACCAAGUACAAGUUUCACCCUGCCAUCUGGAUGUUUUUACAUUCAGAUGGCCAUCA
+#=GC SS_cons                         [[[[[[[,,,<<<<<-<<<<<.______>>>>>>>>>>,<<<<<<<<______>>>>>>>>,,((-((((((((,,<<<______>>><<<________>>>,,.,))))))))-..)),,,]]]-]]]]::::::::<<<<<<<<<<<<<____>>>>>>>>>>>>>:::::
+#=GC RF                              gCcuuacAaAauuaGuuuuca.AUAUAAuggaaCuaauAucuuaGCgcACugacGCuaagaAAGuUggccugaaAAgaaUAUAuUuucgCCAAcACCAGGGcAC.UuucaggccC..aCcaaguacagGcUUUACCCcGCCauCuGgauGccUUUgCauuCaGauGGCuaUaA
+//

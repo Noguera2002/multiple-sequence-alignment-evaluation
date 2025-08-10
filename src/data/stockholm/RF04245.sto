@@ -1,0 +1,37 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF04245
+#=GF ID   MIR169_7
+#=GF DE   MIR169_7 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   44.00
+#=GF TC   44.20
+#=GF NC   43.20
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 2958934 CM SEQDB
+#=GF CL   CL00098
+#=GF DR   MIPF; MIPF0001690;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF CC   Family represents the microRNA (miRNA) precursor MIR169_7 imported from
+#=GF CC   miRBase.
+#=GF WK   MicroRNA
+#=GF SQ   3
+
+
+URS0000D502E0_3983/1-85 AGAGCCAAGAAUGACUUGCCGGCUAGCGAUAGGCUAU-AUUGCUACAAGGCAUAAAAAAAA--AGCUGCGGGAAGUCAUUCUGGCUCU
+URS0000D54F8A_3983/1-87 AGAGCCAAGAAUGACUUGCCGGAUAAUGAUAAGCUAU-AUUGCUACAAGGCAUAAAAAAAAUAAGCAGCGGGAAGUCAUUCUGGCUCU
+URS0000D5362F_3983/1-84 AGAGCCAAGAAUGACUUGCCGGCCGGUGAUCAUAGAUUAUUGCUGUAGAGUGUAAAAUGA----GCUGCCGGAAGUCAUUCUUGCUCU
+#=GC SS_cons            <<<<<<<-<<<<<<<<<-<<<--<<<<----------.--<<<<____>>>>---------..->>>>>>>->>>>>>>>>>>>>>>>
+#=GC RF                 aGaGCcaAGaauGaCuuGCcGGccggcGAUaagcuAU.AUuGCcacAagGCaUAAAAaaAA..AgccgCgGGaaGuCauuCugGCuCu
+//

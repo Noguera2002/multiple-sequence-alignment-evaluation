@@ -1,0 +1,66 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00830
+#=GF ID   mir-74
+#=GF DE   mir-74 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   57.00
+#=GF TC   57.00
+#=GF NC   55.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF CL   CL00090
+#=GF DR   MIPF; MIPF0000275;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   11679671
+#=GF RT   An abundant class of tiny RNAs with probable regulatory roles in
+#=GF RT   Caenorhabditis elegans.
+#=GF RA   Lau NC, Lim LP, Weinstein EG, Bartel DP
+#=GF RL   Science. 2001;294:858-862.
+#=GF RN   [2]
+#=GF RM   12672692
+#=GF RT   The microRNAs of Caenorhabditis elegans.
+#=GF RA   Lim LP, Lau NC, Weinstein EG, Abdelhakim A, Yekta S, Rhoades MW, Burge CB,
+#=GF RA   Bartel DP
+#=GF RL   Genes Dev. 2003;17:991-1008.
+#=GF RN   [3]
+#=GF RM   21307183
+#=GF RT   Improved annotation of C. elegans microRNAs by deep sequencing reveals
+#=GF RT   structures associated with processing by Drosha and Dicer.
+#=GF RA   Warf MB, Johnson WE, Bass BL
+#=GF RL   RNA. 2011;17:563-577.
+#=GF RN   [4]
+#=GF RM   19460142
+#=GF RT   Dynamic expression of small non-coding RNAs, including novel microRNAs and
+#=GF RT   piRNAs/21U-RNAs, during Caenorhabditis elegans development.
+#=GF RA   Kato M, de Lencastre A, Pincus Z, Slack FJ
+#=GF RL   Genome Biol. 2009;10:R54.
+#=GF RN   [5]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF CC   Family represents the microRNA (miRNA) precursor mir-74 imported from
+#=GF CC   miRBase.
+#=GF WK   MicroRNA
+#=GF SQ   7
+
+
+URS0000357F5B_6239/10-90   AAAAAACGUUCGGGCUUCCAUC-UCUUUCCCAGCCUA---CAUCUCAACCUGG--GCUGGCAAGAAAUGGCAGUCUACACGUUUUUC
+URS000078FC19_6238/1-81    --CGCACUUUUGGGCUUCCAUA-UCUUUCCCAGCUCCUCUCAUUUACUA-UGGAUGCUGGCAAGAAAUGGCAGUCUAGAUGUGCA--
+URS0000D524A3_31234/23-103 UCGACACGUUUGGACUUCCGUC-UCUUUCCCAGCUGA---UAUUGGAUA-GCAU-GCUGGCAAGAAAUGGCAGUCCAGAUGUGUACA
+URS0000D56296_135651/1-64  ----------UGGGCUUCCAUUAUCUUUCCCAGCAGG----UUCACGAA-CGUAUGCUGGCAAGAAAUGGCAGUCCACA--------
+URS000044EAA7_31234/7-86   GCCACACAUAUGGGCUUCC-UCAUCUUUCCCAGCGAA----ACUACUAA-UUAC-GCUGGCAAGACAAGGCAGUCUACAUGUGUGGC
+URS0000D51D7A_135651/1-62  ----------UGGGCUUCC-UUUUCGUUCCCAGCUGA----AUUUCUAA-UCAU-GCUGGCAAGACAAGGCAGUCUACU--------
+URS00007A9F02_6238/19-97   GCCACACUUUUGGACUUCCUUC-UCGUUCCCAGCAAA-----AUGCACAGUUU--GCUGGCAAGACUAGGCAGUCCAGAUGUGUGGC
+#=GC SS_cons               :<<<<<<<<--<<<<<-<<<<-.<<<<--<<<<<<<<....________.>>>-.>>>>>->>>>->>>>->>>>>-->>>>>>>>:
+#=GC RF                    accacaCgUUUgGgCUUCCaUc.UCuUUCCCAGCcga....AuUucaaA.ucgu.GCUGGCAaGAaAuGGCAGuCcAcAcGuguggc
+//

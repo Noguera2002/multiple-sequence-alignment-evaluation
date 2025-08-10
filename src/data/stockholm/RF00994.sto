@@ -1,0 +1,56 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00994
+#=GF ID   mir-1255
+#=GF DE   mir-1255 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   63.00
+#=GF TC   63.00
+#=GF NC   62.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 2958934 CM SEQDB
+#=GF DR   MIPF; MIPF0000506;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF RN   [1]
+#=GF RM   18285502
+#=GF RT   Application of massively parallel sequencing to microRNA profiling and
+#=GF RT   discovery in human embryonic stem cells.
+#=GF RA   Morin RD, O'Connor MD, Griffith M, Kuchenbauer F, Delaney A, Prabhu AL,
+#=GF RA   Zhao Y, McDonald H, Zeng T, Hirst M, Eaves CJ, Marra MA
+#=GF RL   Genome Res. 2008;18:610-621.
+#=GF RN   [2]
+#=GF RM   20214803
+#=GF RT   Genome-wide comparative analysis of microRNAs in three non-human primates.
+#=GF RA   Brameier M
+#=GF RL   BMC Res Notes. 2010;3:64.
+#=GF RN   [3]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF CC   This family represents the microRNA (miRNA) precursor mir-1255 imported
+#=GF CC   from miRBase.
+#=GF WK   MicroRNA
+#=GF SQ   11
+
+
+URS000075C3F5_9606/22-94 UUCUCA--------AGGAUGAGCAAAGAAAGUAGAUUUUUUAGAUUCUAAAGAAACUAUCUUCUUUGC--UCAUCCU-------------------------UGAGAA
+URS0000CEB3B3_9600/22-91 UUCUCA--------AGGAUGAGCAAAGAA---AGAUUUUUUAGAUUCUGGAGAAACUAUCUUCUUUGC--UCAUCCU-------------------------UGAGAA
+URS000075ACD7_9593/14-86 UUCUCA--------AGGAUGAGCAAAGAAAGUAGAUUUUUUAGAUUCUAAAGAAACUAUCUUCUUUGC--UCAUCCU-------------------------UGAGAA
+URS000075CA6D_9606/1-67  -UCUUA--------CGGAUGAGCAAAGAAAGUGGUUU-----GCGCCUCAAGAAACCACUUUCUUUGC--UCAUCCA-------------------------UAAGGA
+URS000075B374_9598/1-66  --CUUA--------CGGAUGAGCAAAGAAAGUGGUUU-----GCGCCUCAAGAAACCACUUUCUUUGC--UCAUCCA-------------------------UAAGGA
+URS0000AB0370_9600/1-67  -UCUUA--------CGGAUGAGCAAAGAAAGUGGUUU-----GCGCCUCAAGAAGCCACUUUCUUUGC--UCAUCCA-------------------------UAAGGA
+URS00007E4C56_9544/17-84 UUCUUA--------CGGAUAAGCAAAGAAAGUGGUUU-----GAGCCUCAGGAAACCACUUUCUUUGC--UCAUCUG-------------------------UAAGGA
+URS000075C0B5_9606/1-63  ----UA--------CGGAUGAGCAAAGAAAGUGGUUU-----CUUAAAAUGGAAUCUACU--CUUUGUGAAGAUGC--------------------------UGUGAA
+URS0000D5009D_9600/1-60  ---------------GGAUGAGCAAAGAAAGUGGUUU-----CUUGCAAUGGAAUCUACU--CCUUGUGAAGAUGC--------------------------UGUGAA
+URS000075ACF0_9796/1-63  ----UA--------CGGAUAAGCAAAGAAAGUGGUUU-----CUUUAAAUGGAAACUACU--CCUGGUGAAGAUGC--------------------------UGUGAA
+URS0000D50201_9544/1-104 -GAGUUGCUUCUCAAGGAUGAGCAAUGGAAGUAGUUUUUUUAGAUUCCAAAGAAACUACCUACUUUGC--UCAUCUUUGAGAAGCAACUCUUUAUCCAUUAAAAUUU-
+#=GC SS_cons             .<<<<<........-<<<<<<<<<<<<<<<<<<<<<<.....__________>>>>>>>>>>>>>>>>..>>>>>>-.........................>>>>>:
+#=GC RF                  .ucuua........aGGAUgaGCAAaGaAaGUgGuUU.....GauuCuaaAGAAaCcACuUuCuUUGC..ucAUCCu.........................uaagaA
+//

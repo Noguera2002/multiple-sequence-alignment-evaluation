@@ -1,0 +1,44 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02521
+#=GF ID   Virus-PTE
+#=GF PI   Virus_CITE_7;
+#=GF DE   Panicum mosaic virus cap-independent translation enhancer RNA (PTE)
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF AU   Ontiveros-Palacios N; 0000-0001-8457-4455
+#=GF SE   Eberhardt R
+#=GF SS   Predicted; PMID:23682606
+#=GF GA   80.00
+#=GF TC   108.70
+#=GF NC   36.60
+#=GF TP   Cis-reg;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 26.61 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0005836; regulatory_region;
+#=GF DR   GO; 0019081; viral translation;
+#=GF RN   [1]
+#=GF RM   23682606
+#=GF RT   3' Cap-Independent Translation Enhancers of Plant Viruses.
+#=GF RA   Simon AE, Miller WA
+#=GF RL   Annu. Rev. Microbiol. 2013;0:0-0.
+#=GF RN   [2]
+#=GF RM   37548413
+#=GF RT   Crystal structure of a cap-independent translation enhancer RNA.
+#=GF RA   Lewicka A, Roman C, Jones S, Disare M, Rice PA, Piccirilli JA
+#=GF RL   Nucleic Acids Res. 2023;51:8891-8907.
+#=GF CC   The Panicum mosaic virus translation element (PTE) is a cap-independent
+#=GF CC   translation enhancer in Viral RNAs. The structure of PTE has been reported
+#=GF CC   in PDB 8SH5 [2] 
+#=GF WK   Cap-independent_translation_element
+#=GF SQ   3
+
+
+AY714213.1/3822-3906                     --UAGAACACGUGGGAUAGGGGAUGACCUUGUCGACCGGUUAUCGGUCCCCUGCUCCUUCGAGCUGGCAAGGCGCCCAAAGGUUCUA-
+JF713436.1/3827-3911                     --UAGAACUUGUGGGAUAGGGGAUGAUCUUGUCGACCGUUUCUCGGUCCCCUGCUCCGUUGAGCUGGCAAGGCGCCUAUAGGUUCUA-
+URS0002681455_193120/1-88                GGUAGAACACGUGGGAUAGGGGAUGACCUUGUCGACCGAAACACGGUCCCCUGCUCCUUCGAGCUGGCAAGGCGCUCACAGGUUCUAC
+#=GR URS0002681455_193120/1-88 8SH5_R_SS .((((((((.((((((..{{..(.{({{{{{{{(((((.....)))))}}.)((((....)))))}}}}}}}})))))).))))))))
+#=GC SS_cons                             ..((((((--(((((---AA--(,B<BBBBBBB<<<<<_____>>>>>aa-><<<<____>>>>)bbbbbbbb-)))))--)))))).
+#=GC RF                                  ..uaGaaCacguGGGAUAGGGGaUGacCUUGUCGaCCGauucuCGGuCCCCuGCuCCuUcGaGCuGGCAAGGCGCCCacAGGuuCua.
+#=GC RNA_structural_elements             ==[P15p]==[P2=]===========[P3=5p][======P4=====]====[====P5====]=[P3=3p]==[=P2]==[P13p]=
+//

@@ -1,0 +1,36 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02450
+#=GF ID   ncr1175
+#=GF DE   Bacillus sRNA ncr1175
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF SE   Eberhardt R
+#=GF SS   Published; PMID:20525796
+#=GF GA   60.00
+#=GF TC   96.40
+#=GF NC   51.00
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.44 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0000370; small_regulatory_ncRNA;
+#=GF RN   [1]
+#=GF RM   20525796
+#=GF RT   Identification of regulatory RNAs in Bacillus subtilis.
+#=GF RA   Irnov I, Sharma CM, Vogel J, Winkler WC
+#=GF RL   Nucleic Acids Res. 2010;38:6637-6651.
+#=GF WK   Bacterial_small_RNA
+#=GF SQ   4
+
+
+
+CP002905.1/2722560-2722668         AGGCCGGCGCGAUACUCCCUAUAAC-AUCCUUUU---CAGUAGAUUUCAU-UAUCGUGCCGGUUUUC-------UCACAUGCAAAGCAAUCCCGCCAAUCUA----AUUGAUGGCGGGAUUUGAU
+#=GR CP002905.1/2722560-2722668 PP *************************.********...*************.****************.......***********************99988....8853337************
+AEHM01000050.1/11467-11575         AGGCCGGCGCGAUACUCCCUAUAAC-AUCCUUUU---CAGUAGAUUUCAA-UAUCGUGCCGGCUUUU-------UCAUAUGCAAAAUAACCCCGCCAUUCUG-AUUGAU---GGCGGGGUUUGAU
+#=GR AEHM01000050.1/11467-11575 PP *************************.********...*************.****************.......************************9865.33479*...*************
+AEFY01000063.1/59296-59175         AGGCCGGCGCGAUACUCCCUAUAACUAUCCUUUUAAUCAGUAGAUUUCAAAUAUCGCGCCGGUUUUUUAUACUUUUAUACGAUAAAAAAUCCCGCCAUCUUCAUCAGAUC--GGCGGGUUUUAU-
+#=GR AEFY01000063.1/59296-59175 PP **********************88736666666422256*******99755**************862222222578999999************9................9***99777655.
+AL009126.3/2773781-2773886         AGGCCGGCGCGAUACUCCCUAUAAC-AUCCUUUU---CAGUAGAUUUCAU-UAUCGUGCCGGUUUUC-------UCAUAUGCAAAGCAAUCCCGCCAAUCAG----AUU---GGCGGGAUUUUAU
+#=GC SS_cons                       <<<<<<<<<<<<<<----<<<<___.________...__>>>>-------.>>>>>>>>>>>>>>::.......:::::::::::::<<<<<<<<<<<<___.___>>>-..>>>>>>>>>::::
+#=GC RF                            aggCCGGCgCGauaCUCCCuauAAC.AUCCUUUU...CAguaGAUUUCAa.uauCGcGCCGGcuuUu.......UcAuAuGcaAAauaacCCCGCCauccua.auagauu..GGCGGGguuUaaU
+//

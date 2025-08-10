@@ -1,0 +1,47 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01004
+#=GF ID   mir-557
+#=GF DE   microRNA mir-557
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   93.00
+#=GF TC   93.30
+#=GF NC   92.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   MIPF; MIPF0000520;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   16505370
+#=GF RT   The colorectal microRNAome.
+#=GF RA   Cummins JM, He Y, Leary RJ, Pagliarini R, Diaz LA Jr, Sjoblom T, Barad O,
+#=GF RA   Bentwich Z, Szafranska AE, Labourier E, Raymond CK, Roberts BS, Juhl H,
+#=GF RA   Kinzler KW, Vogelstein B, Velculescu VE
+#=GF RL   Proc Natl Acad Sci U S A. 2006;103:3687-3692.
+#=GF RN   [2]
+#=GF RM   20214803
+#=GF RT   Genome-wide comparative analysis of microRNAs in three non-human primates.
+#=GF RA   Brameier M
+#=GF RL   BMC Res Notes. 2010;3:64.
+#=GF RN   [3]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+URS000075A6B8_9606/22-90 AAUUUGGAGGCCUGGGGCCCUCCCUGCUGCUGGAGAAGUGUUUGCACGGGUGGGCCUUGUCUUUGAAAG
+URS000075D76A_9598/21-89 AAUUUAGAGGCCUGGGGCCCUCCCUGCUGCUGGAGAAGUGUUUGCACGGGUGGGCCUUGUCUUUGAAAG
+URS0000A9BE7A_9600/22-90 AAUUUGGAGGCCUGGGGCCCUCCCUGCUGCUGGAGAAGUGUUUGCAUGGGUGGGCCUUGUCUUUGAAAG
+URS000075B1D9_9544/22-90 AAUUUGGAGGCCUGGGGCCCUCCCUGCUGCUGGACAAGUGUCUGCAUGGGUGAGCCUUAUCUUUGAAAG
+#=GC SS_cons             ::<<<<<<<<<--<<<<<<<-<<<<<<<<<<_____>>>>--->>>->>>->>>>>>>>>>>>>>>>::
+#=GC RF                  AAUUuggAGgCCUggGGCCCUCCCUGCugCUGGAgAAGugUuUGCAuGGGUGGGCCuuGuCUuugAAAG
+//

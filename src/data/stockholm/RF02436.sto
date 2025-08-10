@@ -1,0 +1,39 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02436
+#=GF ID   SpF43_sRNA
+#=GF DE   Streptococcus sRNA SpF43
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF SE   Eberhardt R
+#=GF SS   Predicted; mfold
+#=GF GA   70.00
+#=GF TC   75.80
+#=GF NC   55.00
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 27.75 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0000370; small_regulatory_ncRNA;
+#=GF RN   [1]
+#=GF RM   22807675
+#=GF RT   Control of virulence by small RNAs in Streptococcus pneumoniae.
+#=GF RA   Mann B, van Opijnen T, Wang J, Obert C, Wang YD, Carter R, McGoldrick DJ,
+#=GF RA   Ridout G, Camilli A, Tuomanen EI, Rosch JW
+#=GF RL   PLoS Pathog. 2012;8:e1002788.
+#=GF WK   Streptococcus_sRNA
+#=GF SQ   5
+
+
+
+AEVF01000006.1/27729-27631           AGCAAUAUUCGGAGGUAAGGGAGACAUGAACAACUAAG-UCUAU--CAAAUAAAGAACCUUUAUUUAGUAGAU--CUUGUUUCUGUCUCUUUUUGUGUACUCUU
+#=GR AEVF01000006.1/27729-27631   PP **************************************.*****..***************************..*****************************
+AFUO01000002.1/122223-122126         ACUAAUACUCGGAGGUAAGGGAGACAUGAACAACUA-A-UCUAU--CAAAUAAAGAAUCUUUAUUUAGUAGAU--CUUGUUUUUGUCUCUUUUUGCAUGCUCUU
+#=GR AFUO01000002.1/122223-122126 PP **********************************96.8.*****..***************************..*****************************
+AEGF01000236.1/10494-10396           AUUAAUACUUGGAGAGGUAAGUGACAUGAACAACUAAG-UCUAUCUCAAAUAAAGAACCUUUAUUUAGUAGAU--CUUGUUUUUGUC-UUUUU-GUGUGCUCUU
+#=GR AEGF01000236.1/10494-10396   PP **********99998777778899**************.****9667**************************..**********97..5667***********
+AFUC01000003.1/147470-147372         AAUUACAUUCGGAGGUAA-GGAGAUAUGAACAACUAAGUUUCGU--UAAAUAA-GAUACUUUAUUUAGUGGACUGCUUGUUC-UAUCUCUUUUUGUGUGCCCUC
+#=GR AFUC01000003.1/147470-147372 PP ***************965.79*****************447999..9999986.5555689999999999997467*****9.8********************
+FQ312045.1/254313-254411             ACUAAUACUCGGAGGUAAGGGAGACAUGAACAACUAAG-UCUAU--CAAAUAAAGAACCUUUAUUUAGUAGAU--CUUGUUUUUGUCUCUUUUUGUGUGCUCUU
+#=GC SS_cons                         ::::::::::<<<<--<<<<<<<<<<-<<<<<<----<.<<<<<..-<<<<<<<<___>>>>>>>>->>>>>>..->>>>>>->>>>>>>>>>------>>>>:
+#=GC RF                              AuuaAuAuUcgGaGguaaggGaGacaUgaaCaaCUAAg.ucuau..caaauaaaGAacCuuuauuuAguagac..CuuGuucuuguCuCccuuUGugUgCuCuu
+//

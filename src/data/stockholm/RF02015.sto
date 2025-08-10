@@ -1,0 +1,61 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02015
+#=GF ID   mir-1287
+#=GF DE   microRNA mir-1287
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   93.30
+#=GF TC   93.70
+#=GF NC   93.10
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   MIPF; MIPF0000725;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   18945293
+#=GF RT   Annotation of 390 bovine miRNA genes by sequence similarity with other
+#=GF RT   species
+#=GF RA   Strozzi F, Mazza R, Malinverni R, Williams JL
+#=GF RL   Anim Genet. 2009;40:125.
+#=GF RN   [2]
+#=GF RM   18285502
+#=GF RT   Application of massively parallel sequencing to microRNA profiling and
+#=GF RT   discovery in human embryonic stem cells
+#=GF RA   Morin RD, O'Connor MD, Griffith M, Kuchenbauer F, Delaney A, Prabhu AL,
+#=GF RA   Zhao Y, McDonald H, Zeng T, Hirst M, Eaves CJ, Marra MA
+#=GF RL   Genome Res. 2008;18:610-621.
+#=GF RN   [3]
+#=GF RM   20214803
+#=GF RT   Genome-wide comparative analysis of microRNAs in three non-human primates
+#=GF RA   Brameier M
+#=GF RL   BMC Res Notes. 2010;3:64.
+#=GF RN   [4]
+#=GF RM   19508715
+#=GF RT   Identification and analysis of miRNAs in human breast cancer and teratoma
+#=GF RT   samples using deep sequencing
+#=GF RA   Nygaard S, Jacobsen A, Lindow M, Eriksen J, Balslev E, Flyger H, Tolstrup
+#=GF RA   N, Moller S, Krogh A, Litman T
+#=GF RL   BMC Med Genomics. 2009;2:35.
+#=GF RN   [5]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+URS000072632B_9606/1-88 GUUGUGCUGUCC-AGGUGCUGGAUCAGUGGUUCGAGUCUGAGCCUUUAAAAGCCACUCUAGCCACAGAUGCAGUGAUUGGAGCCAUGAC
+URS0000759BF5_9593/6-93 GUUGUGCUGUCC-AGGUGCUGGAUCAGUGGUUCGAGUCUGAGCCUUUAAAAGCCACUCUAGCCACAGAUGCAGUGAUUGGAGCCAUGAC
+URS0000721545_9600/1-88 GUUGUGCUGUCC-AGGUGCUGGAUCAGUGGUUUGAGUCUGAGCCUCUAAAAGCCACUCUAGCCACAGAUGCUGUGAUUGGAGCCAUGAC
+URS00006256CF_9913/1-89 GCUCUGCUUUCCCAGGUGCUGGAUCAGUGGUUUGAGUCUGAGCCUCUAAAAGCCACUCUAGCAACGGACGCAGUGAUUGGAGCUAUGAC
+#=GC SS_cons            <<<<<<---<<<.<<-<<<<<-<<<-<<<<<<-<<<<--<-<<________>>>>>>>->>>>>>->>>->>>>>->>>>>-->>>>>>
+#=GC RF                 GuuguGCUguCC.agGugCuGGauCAGugGuuuGaGuCUGAGCCUuUAAAAGCCaCuCUagCcaCaGauGCaGugAuuGGaGCCacgaC
+//

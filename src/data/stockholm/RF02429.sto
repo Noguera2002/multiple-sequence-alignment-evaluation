@@ -1,0 +1,37 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02429
+#=GF ID   SpF14_sRNA
+#=GF DE   Streptococcus sRNA SpF14
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF SE   Eberhardt R
+#=GF SS   Predicted; mfold
+#=GF GA   100.00
+#=GF TC   107.10
+#=GF NC   41.20
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 34.03 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0000370; small_regulatory_ncRNA;
+#=GF RN   [1]
+#=GF RM   22807675
+#=GF RT   Control of virulence by small RNAs in Streptococcus pneumoniae.
+#=GF RA   Mann B, van Opijnen T, Wang J, Obert C, Wang YD, Carter R, McGoldrick DJ,
+#=GF RA   Ridout G, Camilli A, Tuomanen EI, Rosch JW
+#=GF RL   PLoS Pathog. 2012;8:e1002788.
+#=GF WK   Streptococcus_sRNA
+#=GF SQ   4
+
+
+
+AEGF01000069.1/9500-9619           CACACAUAUAAAUUUGUAAUACCGUUCAUUUGGUAUUAUUUUUGGACAGUAGUUGUAUUU--CAUGAUCAAUUGGAAUUAUAUAUACGAAUACACUAAGAAGAGACAAAUAUAUAAAAAUAU
+#=GR AEGF01000069.1/9500-9619   PP ****************************95544444445578****************99..599*****************99988888865449**************************
+CP002925.1/1710548-1710430         CAAAAACCAGAAUUUAUAAUAUCGUUUAUAAUGGGCAUGAUUUGGGUUGUCGGUGUAUUCCUUCUAAUCUAUUGGAAUUUUAUA-GCAAAUAC--UAAGAAGAGACAAAAAUAUAUAAAUAU
+#=GR CP002925.1/1710548-1710430 PP **********************************************************************************86.79******..***************************
+AEDX01000005.1/54531-54649         CAAAAACCAGAAUUUAUAAUAUCGUUUAUAAUUGGCAUGGUUUGGGUUGUCUGUGUUUUCCUUCUAAUCUAUUGGAAUUUUAUA-GCCAAUAC--UAAGAAGAGACAAAAAUAUAUAAAUGU
+#=GR AEDX01000005.1/54531-54649 PP **********************************************************************************87.689*****..***************************
+CP000919.1/468632-468751           CAAACAUAUAAAUUUGUAAUACCGUUCAUAAUUGGUAUGAUUUGGACAGUAGUUGUAUUUCUUAUGAUCAAUUGGAAUUAUAUAGGCAAAUAC--UAAGAAGAGACAAAAAUAUAUAAAUAU
+#=GC SS_cons                       :::::(((((--(((((,,<<<-<<<<<-<<<<_____>>>>>>>>>->>>,,,<<<<<<<<<<<<-<<_____>>---->>>>>>->>>>>>..,,,,,,,,,)))))--)))))::::::
+#=GC RF                            CAaAaauauaAAuuuguAAuacCguucaUaaucgguaugauuuggacaguaguUGuauucCcuauaAuCaAUUGGaAUUauauagGCgaauaC..UAAGAAGAGacaaaaAuauauAAAUAU
+//

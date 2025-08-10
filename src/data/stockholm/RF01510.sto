@@ -1,0 +1,59 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01510
+#=GF ID   2dG-I
+#=GF PI   MFR;
+#=GF DE   2dG-I riboswitch aptamer (M. florum)
+#=GF AU   Osuch I
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF AU   Ontiveros-Palacios N; 0000-0001-8457-4455
+#=GF SE   INFERNAL
+#=GF SS   Published; PMID:17911257
+#=GF GA   51.00
+#=GF TC   51.10
+#=GF NC   50.20
+#=GF TP   Cis-reg; riboswitch;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 2958934 CM SEQDB
+#=GF CL   CL00123
+#=GF DR   SO; 0000035; riboswitch;
+#=GF DR   GO; 0032546; deoxyribonucleoside binding;
+#=GF DR   GO; 0031554; regulation of DNA-templated transcription, termination;
+#=GF RN   [1]
+#=GF RM   17911257
+#=GF RT   Guanine riboswitch variants from Mesoplasma florum selectively recognize
+#=GF RT   2'-deoxyguanosine.
+#=GF RA   Kim JN, Roth A, Breaker RR
+#=GF RL   Proc Natl Acad Sci U S A. 2007;104:16092-16097.
+#=GF RN   [2]
+#=GF RM   21841796
+#=GF RT   Structural principles of nucleoside selectivity in a 2'-deoxyguanosine
+#=GF RT   riboswitch.
+#=GF RA   Pikovskaya O, Polonskaia A, Patel DJ, Serganov A
+#=GF RL   Nat Chem Biol. 2011;7:748-755.
+#=GF CC   2dG-I riboswitch is a Purine riboswitche, is involved in feedback control
+#=GF CC   of deoxyguanosine biosynthesis and its structure has been reported in PDB
+#=GF CC   3SKI, 3SKZ, 3SLM, 3SLQ included in the alignment and PDB 3SKL, 3SKR, 3SKT,
+#=GF CC   3SKW not included here [2]
+#=GF WK   Mesoplasma_florum_riboswitch
+#=GF SQ   4
+
+
+AE017263.1/29965-30028                  A--CUUAUACAGGGUAGCAUAAUGGGCUACUGACCCCGCCAUGAAACCUAUUUCAUGACUAUAGG--U
+AE017263.1/668937-668875                A--CUUAUACAGGGUAGCAUAAUGGGCUACUGA-ACCGCCCCGGGACCAAUCUCGGGACUAUAAG--U
+AE017263.1/31976-32038                  A--CUUAUACAUGAUAACAUAUCGGGUUGUCGA-CCUGCCUUAAGACCGAUCUUAAGACUAUAAG--A
+URS000080DE91_2151/1-68                 GGCCUUAUACAGGGUAGCAUAAUGGGCUACUGACCCCGCCUUCAAACCUAUUUGGAGACUAUAAGGUC
+#=GR URS000080DE91_2151/1-68  3SKI_A_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SKI_B_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SKZ_A_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SKZ_B_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SLM_A_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SLM_B_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SLQ_A_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GR URS000080DE91_2151/1-68  3SLQ_B_SS ((((((((({..((((((.....{{))))))(.....})(((((((}}..)))))))..)))))))))
+#=GC SS_cons                            (..((((((A,,<<<<<<_____BB>>>>>><_.___a><<<<<<<bb__>>>>>>>,,))))))..)
+#=GC RF                                 g..CuUAUACAggGuAGCAUAaUGGGCUaCcGA.cCcGCCuugagACCuAUcucaaGACUAUAaG..c
+#=GC RNA_ligand_2dG                     ========XX=========================XXXX===================XX========
+#=GC RNA_structural_element             [=P1=5p=]===[=======P2========][=J2=3=][=======P3=======]==[=P1=3p=]
+//

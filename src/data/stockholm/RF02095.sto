@@ -1,0 +1,82 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02095
+#=GF ID   mir-2985
+#=GF PI   mir-2985-2;
+#=GF DE   mir-2985-2 microRNA precursor
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   68.00
+#=GF TC   68.00
+#=GF NC   67.80
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   MIPF; MIPF0001067;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF RN   [1]
+#=GF RM   21627805
+#=GF RT   Song exposure regulates known and novel microRNAs in the zebra finch
+#=GF RT   auditory forebrain.
+#=GF RA   Gunaratne PH, Lin YC, Benham AL, Drnevich J, Coarfa C, Tennakoon JB,
+#=GF RA   Creighton CJ, Kim JH, Milosavljevic A, Watson M, Griffiths-Jones S,
+#=GF RA   Clayton DF
+#=GF RL   BMC Genomics. 2011;12:277.
+#=GF RN   [2]
+#=GF RM   20360741
+#=GF RT   The genome of a songbird.
+#=GF RA   Warren WC, Clayton DF, Ellegren H, Arnold AP, Hillier LW, Kunstner A,
+#=GF RA   Searle S, White S, Vilella AJ, Fairley S, Heger A, Kong L, Ponting CP,
+#=GF RA   Jarvis ED, Mello CV, Minx P, Lovell P, Velho TA, Ferris M, Balakrishnan
+#=GF RA   CN, Sinha S, Blatti C, London SE, Li Y, Lin YC, George J, Sweedler J,
+#=GF RA   Southey B, Gunaratne P, Watson M, Nam K, Backstrom N, Smeds L, Nabholz B,
+#=GF RA   Itoh Y, Whitney O, Pfenning AR, Howard J, Volker M, Skinner BM, Griffin
+#=GF RA   DK, Ye L, McLaren WM, Flicek P, Quesada V, Velasco G, Lopez-Otin C, Puente
+#=GF RA   XS, Olender T, Lancet D, Smit AF, Hubley R, Konkel MK, Walker JA, Batzer
+#=GF RA   MA, Gu W, Pollock DD, Chen L, Cheng Z, Eichler EE, Stapley J, Slate J,
+#=GF RA   Ekblom R, Birkhead T, Burke T, Burt D, Scharff C, Adam I, Richard H,
+#=GF RA   Sultan M, Soldatov A, Lehrach H, Edwards SV, Yang SP, Li X, Graves T,
+#=GF RA   Fulton L, Nelson J, Chinwalla A, Hou S, Mardis ER, Wilson RK
+#=GF RL   Nature. 2010;464:757-762.
+#=GF RN   [3]
+#=GF RM   20946981
+#=GF RT   The solution structure of the ADAR2 dsRBM-RNA complex reveals a
+#=GF RT   sequence-specific readout of the minor groove.
+#=GF RA   Stefl R, Oberstrass FC, Hood JL, Jourdan M, Zimmermann M, Skrisovska L,
+#=GF RA   Maris C, Peng L, Hofr C, Emeson RB, Allain FH
+#=GF RL   Cell. 2010;143:225-237.
+#=GF RN   [4]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF CC   RNAs can be post-transcriptional modified, in micro RNAs (miRNA) editing
+#=GF CC   of pre-mRNA is a common process. The structure of the mir-2985 has been
+#=GF CC   reported in complex with ADAR protein [3] where they call it R/G site, in
+#=GF CC   the structure, reported in PDB 2L3J, R/G site is reported as a regular
+#=GF CC   A-form helix structure, composed of a stem-loop containing three base-pair
+#=GF CC   mismatches, 2 C:A and 1 G:G. Based on the sequences presented in the SEED
+#=GF CC   alignment, one of the C:A mismatches reported in [3] was updated to a a:u
+#=GF CC   base pair. This family represents the microRNA (miRNA) precursor mir-2985
+#=GF CC   imported from miRBase [4].
+#=GF WK   MicroRNA
+#=GF SQ   8
+
+
+URS000075ED9A_59729/8-78                 UUCAUUAAGGUGGGUGGAAUAGUAUAACAAUAUGCUAAAUGUUGUUAUAGUAUCCCACCUACCCUGAUGUA
+URS00007E4F87_9258/1-55                  ---------GUGGGUGGAAUAGUAUAACAAUAUGCUAAAUGUUGUUAUAGUAUCCCACCUACCC-------
+URS000075A126_10116/21-91                CUCAUUAAGGUGGGUGGAAUAGUAUAACAAUGUGCUCAAUGUUGUUAUAGUAUCCCACCUACCCUGAUGUG
+URS0000D51403_8665/12-82                 CUCAUUAAGGUGGGUGGAAUAGUAUAACAAUAUGGUCAAUGUUGUUAUAGUAUCCCACCUACCCUGAUGUA
+URS0000D4F835_8665/12-79                 AGCAUUAAGGUGGGUGGAAUAAUAUAACAAU---CUCCAUGUUGUUAUAGUAUUCCACCUACCCUGAUGUA
+URS000067F057_59729/8-78                 UCCAUUAAGGUGGGUGGAAUAGUAUAACAAUAUAAAAUGUGUUGUUAUAGUAUUCCACCUUCCCUGAUGUC
+URS0000D5356B_8665/11-81                 UUCAUUAAGGUGGGUGGAAUAAUAUAACAAUAUAAAAUGUGUUGUUAUAGUAUUCCACCUUCCCUGAUGUC
+URS000080DF7D_10116/1-71                 GGCAUUAAGGUGGGUGGAAUAGUAUAACAAUAUGCUAAAUGUUGUUAUAGUAUCCCACCUACCCUGAUGCC
+#=GR URS000080DF7D_10116/1-71  2L3J_B_SS (((((((((((((((((((((.(((((((((((.....))))))))))).)))))))))))))))))))))
+#=GC SS_cons                             ::<<<<<-<<<<<<<<<-<<<-<<<<<<<<<<<_____>>>>>>>>>>>->>>->>>>>>>>>->>>>>::
+#=GC RF                                  uuCAUuAAGGugGGUGGAAUAgUAUAACAAuaugcuaaaugUUGUUAUAGUAUcCCACCuaCCCUgAUGUa
+//

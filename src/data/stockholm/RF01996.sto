@@ -1,0 +1,59 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01996
+#=GF ID   mir-995
+#=GF DE   microRNA mir-995
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   72.00
+#=GF TC   72.10
+#=GF NC   71.70
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   MIPF; MIPF0000895;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   17989255
+#=GF RT   Systematic discovery and characterization of fly microRNAs using 12
+#=GF RT   Drosophila genomes
+#=GF RA   Stark A, Kheradpour P, Parts L, Brennecke J, Hodges E, Hannon GJ, Kellis M
+#=GF RL   Genome Res. 2007;17:1865-1879.
+#=GF RN   [2]
+#=GF RM   20037610
+#=GF RT   Evolutionary flux of canonical microRNAs and mirtrons in Drosophila
+#=GF RA   Berezikov E, Liu N, Flynt AS, Hodges E, Rooks M, Hannon GJ, Lai EC
+#=GF RL   Nat Genet. 2010;42:6-9.
+#=GF RN   [3]
+#=GF RM   18463636
+#=GF RT   Drosophila endogenous small RNAs bind to Argonaute 2 in somatic cells
+#=GF RA   Kawamura Y, Saito K, Kin T, Ono Y, Asai K, Sunohara T, Okada TN, Siomi MC,
+#=GF RA   Siomi H
+#=GF RL   Nature. 2008;453:793-797.
+#=GF RN   [4]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF RN   [5]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+URS00000DFB06_7237/1-85   --GCUGCACAACGCAGCCCGGAUUCUGUGUGUGCUGCGCUGUGUUCUUAAAAGC-CGUAGCACCACAUGAUUCGGCUGCGUGGUCAGC---
+URS0000D558AC_7244/17-103 CAGCUGUACAACGAAGCCCGGAUACUGUGUGUGUUGCGCUGU----UUAGAGGUACGUAGCACCACAUGAUUCGGCUUCGUGGUGCACGCA
+URS0000659C44_7227/1-88   CACCUGCACCCCGCAGCCCGAAUUAUGUGGGAGCUGCGCCGU---UUCCGUAAUCCGUAGCACCACAUGAUUCGGCUUCGUGGUACAGGAU
+URS0000D51BD2_7240/17-104 CACCUGUACCCCGCAGCCCGAAUUAUGUGGGAGCUGCGCCGU---UUCCAAAGUCCGUAGCACCACAUGAUUCGGCUUCGUGGUGCAGGAU
+#=GC SS_cons              ::<<<<<<<<<<<<<<<<-<<<<<<<<<<-<<<<<<<<____...__________>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>::
+#=GC RF                   CAccugcaCcaCGcaGCCCGaaucauGuGuGuGcugCGCuGU...uUuaaaagucCGuagCaCCaCaugauuCGGCugCGugGugcaggau
+//

@@ -1,0 +1,59 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00957
+#=GF ID   mir-663
+#=GF DE   mir-663 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; RNAalifold
+#=GF GA   75.00
+#=GF TC   75.30
+#=GF NC   72.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.00 -Z 2958934 CM SEQDB
+#=GF DR   MIPF; MIPF0000462;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0016442; RISC complex;
+#=GF DR   GO; 0035195; miRNA-mediated post-transcriptional gene silencing;
+#=GF RN   [1]
+#=GF RM   16505370
+#=GF RT   The colorectal microRNAome.
+#=GF RA   Cummins JM, He Y, Leary RJ, Pagliarini R, Diaz LA Jr, Sjoblom T, Barad O,
+#=GF RA   Bentwich Z, Szafranska AE, Labourier E, Raymond CK, Roberts BS, Juhl H,
+#=GF RA   Kinzler KW, Vogelstein B, Velculescu VE
+#=GF RL   Proc Natl Acad Sci U S A. 2006;103:3687-3692.
+#=GF RN   [2]
+#=GF RM   17989710
+#=GF RT   MicroRNA expression profiles of human leukemias.
+#=GF RA   Takada S, Yamashita Y, Berezikov E, Hatanaka H, Fujiwara SI, Kurashina K,
+#=GF RA   Watanabe H, Enomoto M, Soda M, Choi YL, Mano H
+#=GF RL   Leukemia. 2008;22:1274-1278.
+#=GF RN   [3]
+#=GF RM   18760970
+#=GF RT   Computational identification of novel microRNA homologs in the chimpanzee
+#=GF RT   genome.
+#=GF RA   Baev V, Daskalova E, Minkov I
+#=GF RL   Comput Biol Chem. 2009;33:62-70.
+#=GF RN   [4]
+#=GF RM   30423142
+#=GF RT   miRBase: from microRNA sequences to function.
+#=GF RA   Kozomara A, Birgaoanu M, Griffiths-Jones S
+#=GF RL   Nucleic Acids Res. 2019;47:D155.
+#=GF CC   Family represents the microRNA (miRNA) precursor mir-663 imported from
+#=GF CC   miRBase.
+#=GF WK   Mir-663_microRNA_precursor_family
+#=GF SQ   6
+
+
+URS00006A470C_9606/1-90   CCUUCCGGCGUCCCAGGCGGGGCGCCGCGGGACCGCCCUCGUGUCUGUGGCGGUGGGAUCCCGCGGCCGUGUUUUCCUGGUGGCCCGGCC
+URS000075A3A5_9598/1-90   CCUUCCGGCAUCCCAGGCGGGGCGCCGCGGGACCGCCCUCGUGUCUGUGGCGGUGGGAUCCCGCGGCCGUGUUUUCCUGGUGGCCCGGCC
+URS000075C3DA_9544/1-90   CCGUUCGGCGUCCCAGGCGGGGCGCUGCGGGACCGCCCUCGUGUCUGUGGCGGUGGGAUCCCGUGGCCGUGUUUUCCUGGUGGCCCGGCC
+URS000075B5F7_9598/12-101 CCGUCCGGCAUCCUAGGCGGGUCGCUGUGGGACCGCCCUCGUGUCUGUGGCGGUGGGAUCCUGUGGCCGUGUUUUCCUGGUGGCCCGGCC
+URS000075EE28_9606/12-101 CCGUCCGGCAUCCUAGGCGGGUCGCUGCGGUACCUCCCUCCUGUCUGUGGCGGUGGGAUCCCGUGGCCGUGUUUUCCUGGUGGCCCGGCC
+URS0000D52386_9600/10-99  CCAUCCGGCAUCCUAGAUGGGGAGCCGUGGGACCUCCCUCGUGCCUGUGGUGGUGGGAUCCCAUGGCAGUGUUUUCCUGGUGGCCCGGCC
+#=GC SS_cons              ::::<<<<--<<<<<<<-<<-<<<<<<<<<<<<<<<<<________>->>>>>----->>>>>>>>>->>->>-->>>>>->>->>>>::
+#=GC RF                   CCuUcCGGCauCCcaGGcggGgcGCcgcGGgaCCgCCCUCgUGuCUGUGGcGGUGGGAucCCgcgGCcgcGuuUUCCugGUGgCCCGgCC
+//

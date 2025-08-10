@@ -1,90 +1,64 @@
 #!/usr/bin/env python3
 """
-Train elastic-net logistic on pairwise delta features with interaction terms,
-then perform cross-validated calibration to get well-calibrated probabilities.
+train_and_calibrate.py (antisymmetric, no interaction terms)
 
-Outputs a calibrated classifier (.joblib).
+Train a logistic regression on antisymmetric delta features.
+- Uses ONLY linear delta_* features (no squares/products)
+- Enforces antisymmetry by setting fit_intercept=False
+- Calibrates probabilities with cross-validated isotonic (default) or sigmoid
+
+Outputs: calibrated model (.joblib)
 """
-import pandas as pd
 import argparse
+import os  # NEW
 import joblib
-import numpy as np
+import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.calibration import CalibratedClassifierCV
-from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 
-def build_features(df, add_interactions=True):
-    # assume columns: tool1, tool2, label, and delta_<metric> features
-    feature_cols = [c for c in df.columns if c.startswith('delta_')]
-    X = df[feature_cols].copy()
-    if add_interactions:
-        # pairwise products (including squares) of features
-        for i in range(len(feature_cols)):
-            for j in range(i, len(feature_cols)):
-                a = feature_cols[i]
-                b = feature_cols[j]
-                X[f'{a}_x_{b}'] = X[a] * X[b]
-    return X
+def build_X(df: pd.DataFrame):
+    cols = [c for c in df.columns if c.startswith("delta_")]
+    return df[cols].values, cols
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--train-pairs', required=True, help='Train pairwise CSV (used for both fitting and calibration)')
-    parser.add_argument('--model-out', required=True, help='Output calibrated model (.joblib)')
-    parser.add_argument('--cv-folds', type=int, default=5, help='CV folds for inner grid and calibration')
-    parser.add_argument('--method', choices=['isotonic','sigmoid'], default='isotonic', help='Calibration method')
-    parser.add_argument('--no-interactions', action='store_true', help='Do not add interaction terms / squares')
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pairs", required=True, help="Pairwise CSV from prepare_pairwise_data.py")
+    ap.add_argument("--model-out", required=True, help="Path to write calibrated model (.joblib)")
+    ap.add_argument("--penalty", default="l2", choices=["l2","none"], help="Logistic penalty (default l2)")
+    ap.add_argument("--C", type=float, default=1.0, help="Inverse regularization strength (default 1.0)")
+    ap.add_argument("--calib", default="isotonic", choices=["isotonic","sigmoid"], help="Calibration method")
+    ap.add_argument("--cv", type=int, default=5, help="CV folds for calibration")
+    args = ap.parse_args()
 
-    df_train = pd.read_csv(args.train_pairs)
-    y = df_train['label']
-    X_raw = build_features(df_train, add_interactions=not args.no_interactions)
+    df = pd.read_csv(args.pairs)
+    X, feature_names = build_X(df)   # CHANGED: keep feature_names
+    y = df["label"].astype(int).values
 
-    # Standardize features to help elastic-net
-    scaler = StandardScaler()
-
-    # Base logistic with elastic-net (saga supports elasticnet)
-    base = LogisticRegression(
-        penalty='elasticnet',
-        solver='saga',
-        max_iter=5000,
-        l1_ratio=0.5,  # placeholder; overridden by grid
-        C=1.0,
-        tol=1e-4,
-        random_state=42,
-    )
-
-    pipe = Pipeline([
-        ('scale', scaler),
-        ('logreg', base),
+    base = Pipeline([
+        ("scaler", StandardScaler(with_mean=True, with_std=True)),
+        ("clf", LogisticRegression(
+            penalty=None if args.penalty=="none" else args.penalty,
+            C=args.C,
+            solver="lbfgs",
+            max_iter=1000,
+            class_weight="balanced",
+            fit_intercept=False
+        ))
     ])
 
-    # Grid search over C and l1_ratio
-    param_grid = {
-        'logreg__C': [0.01, 0.1, 1, 10],
-        'logreg__l1_ratio': [0.1, 0.5, 0.9],
-    }
-    cv_inner = StratifiedKFold(n_splits=args.cv_folds, shuffle=True, random_state=42)
-    grid = GridSearchCV(
-        estimator=pipe,
-        param_grid=param_grid,
-        scoring='average_precision',
-        cv=cv_inner,
-        n_jobs=-1,
-        verbose=1,
-    )
-    grid.fit(X_raw, y)
-    best_pipe = grid.best_estimator_
-    print(f"Best CV params: {grid.best_params_}, avg_precision={grid.best_score_:.4f}")
+    clf = CalibratedClassifierCV(base, method=args.calib, cv=args.cv)
+    clf.fit(X, y)
 
-    # Calibrate with cross-validated calibration on same data
-    calibrated = CalibratedClassifierCV(best_pipe, cv=args.cv_folds, method=args.method)
+    # NEW: save feature order and ensure output dir exists
+    clf.feature_names_ = feature_names
+    outdir = os.path.dirname(args.model_out)
+    if outdir:
+        os.makedirs(outdir, exist_ok=True)
 
-    calibrated.fit(X_raw, y)
+    joblib.dump(clf, args.model_out)
+    print(f"✔ Saved calibrated model to {args.model_out}")
 
-    joblib.dump(calibrated, args.model_out)
-    print(f"Calibrated model saved to {args.model_out}")
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

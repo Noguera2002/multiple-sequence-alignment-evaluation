@@ -211,6 +211,10 @@ src/data/raw/
 src/data/msa/
 src/data/processed/
 src/results/
+# Ignore Stockholm .sto data files
+src/data/stockholm/
 
 # VScode ignore 
 .vscode/ 
+
+

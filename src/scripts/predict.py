@@ -1,94 +1,85 @@
 #!/usr/bin/env python3
 """
-predict.py
+predict.py (antisymmetric, no interactions)
 
-Compare two MSAs with the trained calibrated model and output the probability
-that the first MSA is better than the second.
-
-Interpretation for users:
-- Values near 1 indicate strong support for the first MSA.
-- Values near 0 indicate strong support for the second MSA.
-- Values near 0.5 indicate no clear preference.
-
-Usage:
-    python src/scripts/predict.py msa1.fasta msa2.fasta
+Compare two MSAs with the trained calibrated model and output
+P(MSA1 > MSA2). Builds ONLY the linear delta_* features, in the
+exact order saved in the model (feature_names_).
 """
 
 import sys
+import argparse
 import pandas as pd
 import joblib
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
-# Paths
-ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = ROOT / "model" / "calibrated_model.joblib"
-
-# ---- Helpers to reuse your existing code ----
+# Reuse metric code
 from metrics import compute_metrics, read_alignment
-from prepare_pairwise_data import TOP_METRICS
 
-def compute_metrics_for_file(msa_file, tool_label="ToolX", family_label="Query"):
-    """Compute the same metrics as in metrics.py for a single MSA file."""
+ID_COLS = {"Family","family","Source","tool","Filename","filename"}
+
+def compute_metrics_for_file(msa_file, tool_label="MSA", family_label="Query"):
     seqs = read_alignment(msa_file)
     mets = compute_metrics(seqs)
-    rec = {
+    return {
         **mets,
         "Family": family_label,
         "Source": tool_label,
         "Filename": Path(msa_file).name
     }
-    return rec
 
-def build_delta_features(df_metrics):
+def infer_metric_cols(df: pd.DataFrame):
+    cols = []
+    for c in df.columns:
+        if c in ID_COLS:
+            continue
+        if pd.api.types.is_numeric_dtype(df[c]):
+            cols.append(c)
+    return cols
+
+def build_delta_frame(m1: dict, m2: dict, feature_names):
     """
-    Build delta features exactly like prepare_pairwise_data.py
-    but without SP scores (label is omitted for prediction).
+    Build a single-row DataFrame with columns exactly = feature_names.
+    feature_names are like ['delta_Gap','delta_Match',...]
     """
-    assert len(df_metrics) == 2, "Need exactly two MSAs"
-    tool1, tool2 = df_metrics.iloc[0], df_metrics.iloc[1]
-    rec = {"tool1": tool1["Source"], "tool2": tool2["Source"]}
-    for m in TOP_METRICS:
-        rec[f"delta_{m}"] = tool1[m] - tool2[m]
-    return pd.DataFrame([rec])
+    # raw deltas for all numeric metrics present
+    df_tmp = pd.DataFrame([m1, m2])
+    metric_cols = infer_metric_cols(df_tmp)
+    deltas = {f"delta_{k}": float(m1[k]) - float(m2[k]) for k in metric_cols}
 
-def add_interactions(df):
-    """Add interaction features as done in training."""
-    feature_cols = [c for c in df.columns if c.startswith("delta_")]
-    X = df[feature_cols].copy()
-    for i in range(len(feature_cols)):
-        for j in range(i, len(feature_cols)):
-            a = feature_cols[i]
-            b = feature_cols[j]
-            X[f"{a}_x_{b}"] = X[a] * X[b]
-    return X
+    # create X row with the trained feature order; fill missing with 0.0
+    row = {name: deltas.get(name, 0.0) for name in feature_names}
+    return pd.DataFrame([row])
 
-def main(msa1, msa2):
-    # Compute metrics for the two new MSAs
-    df_metrics = pd.DataFrame([
-        compute_metrics_for_file(msa1, tool_label="MSA1"),
-        compute_metrics_for_file(msa2, tool_label="MSA2"),
-    ])
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("msa1", help="Path to first MSA (FASTA)")
+    ap.add_argument("msa2", help="Path to second MSA (FASTA)")
+    ap.add_argument("--model", default="models/logreg_calibrated.joblib",
+                    help="Path to trained calibrated model (.joblib)")
+    args = ap.parse_args()
 
-    # Build pairwise delta features
-    df_delta = build_delta_features(df_metrics)
-    X = add_interactions(df_delta)
+    # Load model and its feature order
+    model = joblib.load(args.model)
+    feature_names = getattr(model, "feature_names_", None)
+    if not feature_names:
+        sys.exit("Model missing feature_names_. Retrain with updated train_and_calibrate.py")
 
-    # Load trained, calibrated model
-    model = joblib.load(MODEL_PATH)
+    # Compute metrics for both MSAs
+    m1 = compute_metrics_for_file(args.msa1, tool_label="MSA1")
+    m2 = compute_metrics_for_file(args.msa2, tool_label="MSA2")
 
-    # Predict probability that MSA1 > MSA2
-    prob = model.predict_proba(X)[:, 1][0]
+    # Build delta features in the exact trained order
+    X = build_delta_frame(m1, m2, feature_names)
 
-    # Print result
+    # Predict P(MSA1 > MSA2)
+    prob = float(model.predict_proba(X)[:,1][0])
+
     print(f"P(MSA1 > MSA2) = {prob:.3f}")
-    print("Interpretation for the user:")
-    print("- Values near 1 indicate strong support for the first MSA.")
-    print("- Values near 0 indicate strong support for the second MSA.")
-    print("- Values near 0.5 indicate no clear preference.")
+    print("Interpretation:")
+    print("- ~1.0: strong support for MSA1")
+    print("- ~0.5: no clear preference")
+    print("- ~0.0: strong support for MSA2")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python predict.py <msa1.fasta> <msa2.fasta>")
-        sys.exit(1)
-    main(sys.argv[1], sys.argv[2])
+    main()

@@ -60,7 +60,5 @@ Calibration is strong (reliability curve near diagonal; Brier ≈ **0.19**). Cro
 
 ## Contact
 
-Author: Jaime Noguera
-Affiliation: Technical University of Denmark (DTU)
-Email: s233773@dtu.dk
+Author: Jaime Noguera, Email: s233773@dtu.dk
 

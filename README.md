@@ -49,13 +49,13 @@ Interpretation for the user:
 
 ## Results
 
-**Internal validation on Rfam; calibrated with 5-fold CV**
+**Held-out families (Rfam, n ≥ 4; 20% test). Trained on remaining 80%; 5-fold CV calibration on train**
 
-- Overall precision: 0.720 (all pairs)
-- ≥70% confidence (|p−0.5| ≥ 0.20): 83.5% precision at 43.9% coverage
-- ≥80% confidence (|p−0.5| ≥ 0.30): 88.6% precision at 24.1% coverage
+- **Overall precision (test):** **0.689**
+- **≥70% confidence** (|p−0.5| ≥ **0.20**): **79.5% precision** at **43.5% coverage**
+- **≥80% confidence** (|p−0.5| ≥ **0.30**): **84.7% precision** at **24.0% coverage**
 
-Calibration is strong (reliability curve near diagonal; Brier ≈ **0.19**). Cross-metric and per-family analyses indicate low regret and balanced performance (see results/plots_model/ and results/plots_results/).
+Calibration remains strong on the test split (see **results/plots_model/**); cross-metric and per-family analyses indicate low regret and balanced performance (see **results/plots_results/**).
 
 
 ## Contact

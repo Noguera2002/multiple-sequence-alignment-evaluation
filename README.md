@@ -52,8 +52,6 @@ Interpretation for the user:
 
 ## Results
 
-see results/plots_model/ and results/plots_results/
-
 **Internal validation on Rfam; calibrated with 5-fold CV**
 
 - Overall precision: 0.720 (all pairs)

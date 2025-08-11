@@ -15,9 +15,6 @@
 
 - **Inference on any RNA:** compare **any two RNA MSAs** (FASTA). No Rfam data needed at prediction time.
 - **Training domain:** trained and CV-calibrated on **Rfam families (n ≥ 4)**; calibration/precision may shift on very different datasets.
-- **Recommended use:**
-  - Prefer **high-confidence calls** (e.g., |p−0.5| ≥ **0.3**).
-  - Treat ~0.55–0.65 as “no clear preference”.
 - **Input expectations:** nucleotide alphabet (A/C/G/U; T treated as U), aligned FASTA, ≥4 sequences per MSA works best.
 - **Future work:** small labeled sets in new domains can be used to **re-calibrate** with the provided training script.
 

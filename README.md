@@ -47,15 +47,15 @@ Interpretation for the user:
 - Values near 0 indicate strong support for the second MSA.
 - Values near 0.5 indicate no clear preference.
 
-## Results
+## Results  
+**Held-out families (Rfam, n ≥ 4; 20% test). Trained on remaining 80%; 5-fold CV calibration on train; tie-margin = 0.02**  
 
-**Held-out families (Rfam, n ≥ 4; 20% test). Trained on remaining 80%; 5-fold CV calibration on train**
-
-- **Overall precision (test):** **0.689**
-- **≥70% confidence** (|p−0.5| ≥ **0.20**): **79.5% precision** at **43.5% coverage**
-- **≥80% confidence** (|p−0.5| ≥ **0.30**): **84.7% precision** at **24.0% coverage**
+- **Overall precision (test):** **0.732**  
+- **≥70% confidence** (|p−0.5| ≥ **0.20**): **82.7% precision** at **57.1% coverage**  
+- **≥80% confidence** (|p−0.5| ≥ **0.30**): **88.7% precision** at **35.5% coverage**  
 
 Calibration remains strong on the test split (see **results/plots_model/**); cross-metric and per-family analyses indicate low regret and balanced performance (see **results/plots_results/**).
+
 
 
 ## Contact

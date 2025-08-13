@@ -1,5 +1,3 @@
-## README_scripts.md
-
 # Scripts for MSA Evaluation and Model Pipeline
 
 This document describes the **core scripts** for feature generation, model training, evaluation, and prediction.  

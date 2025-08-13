@@ -1,30 +1,29 @@
+
+---
+
+## **README_scripts.md**
+```markdown
 # Scripts for MSA Evaluation and Model Pipeline
 
-This directory contains scripts to compute metrics, build pairwise features, train and calibrate models, evaluate, predict, and plot results.
+This document describes the **core scripts** for feature generation, model training, evaluation, and prediction.  
+Data preparation scripts are covered in `README_data.md`.
 
-All examples assume you run them **from the repo root**.
+---
 
-## Core scripts (with examples)
+## Core scripts
 
 | Script | Purpose | Example usage |
 |---|---|---|
-| **src/data/scripts/make_stockholm_from_seed.py** | Split `Rfam.seed` into per-family **Stockholm** files. | `python3 src/data/scripts/make_stockholm_from_seed.py --seed src/data/raw/Rfam.seed --outdir src/data/stockholm` |
-| **src/scripts/filter_families.py** | Create whitelist of families with **n ≥ 4** sequences. | `python3 src/scripts/filter_families.py --rfam-dir src/data/msa/Rfam --min-seqs 4 --out src/data/processed/kept_families.txt` |
-| **src/scripts/metrics.py** | Compute **descriptive metrics** for all MSAs (Rfam + tools). | `python3 src/scripts/metrics.py src/data/msa/Rfam src/data/msa/MAFFT src/data/msa/Clustal src/data/msa/T-coffee src/data/msa/Muscle -o src/data/processed/metrics.csv --families src/data/processed/kept_families.txt` |
-| **src/scripts/compute_sp_alltools.py** | Compute **SP** (and also SP_stem/SP_loop for diagnostics) for each tool MSA **vs the per-family Stockholm reference**. | `python3 src/scripts/compute_sp_alltools.py --ref-stockholm src/data/stockholm --clustal src/data/msa/Clustal --mafft src/data/msa/MAFFT --tcoffee src/data/msa/T-coffee --muscle src/data/msa/Muscle --families src/data/processed/kept_families.txt --out src/data/processed/sp_for_train_SPall.csv` |
-| **src/scripts/prepare_pairwise_data.py** | Generate **pairwise features**: antisymmetric deltas (A−B); drop near-ties with a **tie margin**. | `python3 src/scripts/prepare_pairwise_data.py --metrics src/data/processed/metrics.csv --sp src/data/processed/sp_for_train_SPall.csv --label-col sp --tie-margin 0.02 --output src/data/processed/train_pairs_SPall.csv` |
 | **src/scripts/split_pairs_by_family.py** | Split pairs **by family** into train/test (e.g., 80/20). | `python3 src/scripts/split_pairs_by_family.py --pairs src/data/processed/train_pairs_SPall.csv --out-train src/data/processed/train_pairs_SPall.train.csv --out-test src/data/processed/train_pairs_SPall.test.csv --seed 42 --test-frac 0.2` |
-| **src/scripts/train_and_calibrate.py** | Train **logistic regression** (L2, **no intercept**) and **sigmoid-calibrate** with 5-fold CV. | `python3 src/scripts/train_and_calibrate.py --pairs src/data/processed/train_pairs_SPall.train.csv --model-out src/model/model_SPall_sigC3.train.joblib --penalty l2 --C 3.0 --calib sigmoid --cv 5` |
-| **src/scripts/train_random_forest.py** | Train **Random Forest** and **isotonic-calibrate** with 5-fold CV (optional antisymmetry augmentation). | `python3 src/scripts/train_random_forest.py --pairs src/data/processed/train_pairs_SPall.train.csv --model-out src/model/model_SPall_rf_iso_cv5.train.joblib --calib isotonic --cv 5 --n-estimators 600 --max-depth 8 --min-samples-leaf 20 --augment-antisym` |
-| **src/scripts/evaluate.py** | Precision/coverage at a **confidence margin** (`--conf-thresh`). | `python3 src/scripts/evaluate.py --model src/model/model_SPall_sigC3.train.joblib --test-pairs src/data/processed/train_pairs_SPall.test.csv --conf-thresh 0.0`<br>`python3 src/scripts/evaluate.py --model src/model/model_SPall_sigC3.train.joblib --test-pairs src/data/processed/train_pairs_SPall.test.csv --conf-thresh 0.2`<br>`python3 src/scripts/evaluate.py --model src/model/model_SPall_sigC3.train.joblib --test-pairs src/data/processed/train_pairs_SPall.test.csv --conf-thresh 0.3` |
-| **src/scripts/predict.py** | Compare **two MSAs**; output calibrated probability **P(MSA1 > MSA2)**. | `python3 src/scripts/predict.py path/to/MSA1.fasta path/to/MSA2.fasta --model src/model/model_SPall_sigC3.train.joblib` |
+| **src/scripts/train_and_calibrate.py** | Train **logistic regression** (L2, no intercept) and **sigmoid-calibrate** with 5-fold CV. | `python3 src/scripts/train_and_calibrate.py --pairs src/data/processed/train_pairs_SPall.train.csv --model-out src/model/model_SPall_sigC3_cv5.train.joblib --penalty l2 --C 3.0 --calib sigmoid --cv 5` |
+| **src/scripts/train_random_forest.py** | Train **Random Forest** and **isotonic-calibrate** with 5-fold CV. | `python3 src/scripts/train_random_forest.py --pairs src/data/processed/train_pairs_SPall.train.csv --model-out src/model/model_SPall_rf_iso_cv5.train.joblib --calib isotonic --cv 5 --n-estimators 600 --max-depth 8 --min-samples-leaf 20 --augment-antisym` |
+| **src/scripts/evaluate.py** | Precision/coverage at a **confidence margin** (`--conf-thresh`). | `python3 src/scripts/evaluate.py --model src/model/model_SPall_sigC3_cv5.train.joblib --test-pairs src/data/processed/train_pairs_SPall.test.csv --conf-thresh 0.2` |
+| **src/scripts/predict.py** | Compare **two MSAs**; output calibrated probability **P(MSA1 > MSA2)**. | `python3 src/scripts/predict.py path/to/MSA1.fasta path/to/MSA2.fasta --model src/model/model_SPall_sigC3_cv5.train.joblib` |
 
-> **Notes:**  
-> predict.py is the only script needed (together with the model_SPall_sigC3.joblib) for end users who just want to compare two new MSAs.
-> All other scripts are for data preparation, model training, and evaluation.
-> Ensure the Python dependencies in requirements_scripts.txt are installed.
+---
 
-
-
-
+## Notes
+- **Logistic regression** (`model_SPall_sigC3_cv5.train.joblib`) is the main reference model.
+- **Random forest** (`model_SPall_rf_iso_cv5.train.joblib`) is included for comparison.
+- For end users, only `predict.py` + a trained model is required.
 

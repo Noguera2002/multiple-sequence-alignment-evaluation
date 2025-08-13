@@ -1,8 +1,5 @@
+## README_scripts.md
 
----
-
-## **README_scripts.md**
-```markdown
 # Scripts for MSA Evaluation and Model Pipeline
 
 This document describes the **core scripts** for feature generation, model training, evaluation, and prediction.  
@@ -20,7 +17,6 @@ Data preparation scripts are covered in `README_data.md`.
 | **src/scripts/evaluate.py** | Precision/coverage at a **confidence margin** (`--conf-thresh`). | `python3 src/scripts/evaluate.py --model src/model/model_SPall_sigC3_cv5.train.joblib --test-pairs src/data/processed/train_pairs_SPall.test.csv --conf-thresh 0.2` |
 | **src/scripts/predict.py** | Compare **two MSAs**; output calibrated probability **P(MSA1 > MSA2)**. | `python3 src/scripts/predict.py path/to/MSA1.fasta path/to/MSA2.fasta --model src/model/model_SPall_sigC3_cv5.train.joblib` |
 
----
 
 ## Notes
 - **Logistic regression** (`model_SPall_sigC3_cv5.train.joblib`) is the main reference model.

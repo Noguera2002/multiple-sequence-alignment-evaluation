@@ -12,20 +12,20 @@ Generates:
 
 ### For logistic regression model
 python3 results/scripts/make_model_report.py \
-  --model src/model/model_SPall_sigC3_cv5.train.joblib \
+  --model src/model/model_lr.joblib \
   --pairs src/data/processed/train_pairs_SPall.test.csv \
   --outdir results/LR_model_results/
 
 ### For random forest model
 python3 results/scripts/make_model_report.py \
-  --model src/model/model_SPall_rf_iso_cv5.train.joblib \
+  --model src/model/model_rf.joblib \
   --pairs src/data/processed/train_pairs_SPall.test.csv \
   --outdir results/RF_model_results/
 
 ## Comparing Logistic vs Random Forest
 python3 results/scripts/compare_models.py \
-  --lr-model src/model/model_SPall_sigC3_cv5.train.joblib \
-  --rf-model src/model/model_SPall_rf_iso_cv5.train.joblib \
+  --lr-model src/model/model_lr.joblib \
+  --rf-model src/model/model_rf.joblib\
   --pairs src/data/processed/train_pairs_SPall.test.csv \
   --outdir results/
 

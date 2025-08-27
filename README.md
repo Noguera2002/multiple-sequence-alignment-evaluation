@@ -1,20 +1,20 @@
 # Jaime Noguera Thesis: MSA Evaluation
 
-**What this does:** given two MSAs, predict a **calibrated probability** that the first is better than the second.
+**What this does:** given two MSAs, predict a **probability** that the first is better than the second.
 
 - ~1.0 → strong support for **MSA1**
 - ~0.5 → no clear preference
 - ~0.0 → strong support for **MSA2**
 
 **How it was trained:**
-- **Labels:** for each family, we score every tool-produced MSA **against the per-family Rfam Stockholm reference** using **SP**, **SP_stem** (paired columns), and **SP_loop** (unpaired). The training target is their mean.
+- **Labels:** for each family, we score every tool-produced MSA **against the per-family Rfam reference** using **SP**. We use **SP** difference to label comparisons. If tool1 is better than tool2 the label is 1. If its the contrary, the label is 0.
 - **Features:** **antisymmetric deltas** (A−B) of simple, fast alignment metrics.
 - **Model:** **logistic regression**, **no intercept**, **sigmoid calibration**, **C=3**.
 
 ## Applicability
 
 - **Inference on any RNA:** compare **any two RNA MSAs** (FASTA). No Rfam data needed at prediction time.
-- **Training domain:** trained and CV-calibrated on **Rfam families (n ≥ 4)**; calibration/precision may shift on very different datasets.
+- **Training domain:** trained and CV-calibrated on **Rfam families (n ≥ 4)**
 - **Input expectations:** nucleotide alphabet (A/C/G/U; T treated as U), aligned FASTA, ≥4 sequences per MSA works best.
 - **Future work:** small labeled sets in new domains can be used to **re-calibrate** with the provided training script.
 

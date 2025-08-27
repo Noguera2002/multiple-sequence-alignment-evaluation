@@ -14,17 +14,18 @@
 ## Applicability
 
 - **Inference on any RNA:** compare **any two RNA MSAs** (FASTA). No Rfam data needed at prediction time.
-- **Training domain:** trained and CV-calibrated on **Rfam families (n ≥ 4)**
-- **Input expectations:** nucleotide alphabet (A/C/G/U; T treated as U), aligned FASTA, ≥4 sequences per MSA works best.
-- **Future work:** small labeled sets in new domains can be used to **re-calibrate** with the provided training script.
+- **Training data:** trained and CV-calibrated on **Rfam families (n ≥ 4)**.
+- **Input expectations:** nucleotide alphabet (A/C/G/U; T treated as U), aligned FASTA, ≥4 sequences per MSA recommended.
+- **Future work: expand** training data and tools.
 
 ## Overview
 
-- **Extract and filter families from Rfam** (n ≥ 4), then split `Rfam.seed` into per-family **Stockholm** files.
-- **Generate MSAs** with tools (**MAFFT**, **Clustal Omega**, **T-Coffee**, **MUSCLE**) and include the **Rfam** benchmark MSA.
-- **Compute descriptive metrics** and **SP-based scores** against the Stockholm reference: **SP**, **SP_stem**, **SP_loop**.
-- **Build pairwise features** as **antisymmetric deltas** (A−B) of the metrics; training label = **mean(SP, SP_stem, SP_loop)**.
-- **Train** logistic regression (L2, **no intercept**, **no interactions**); **sigmoid** calibration with 5-fold CV.
+- **Extract and filter families from Rfam (n ≥ 4)**, then split Rfam.seed into per-family Stockholm files.
+- **Generate MSAs with tools** (**MAFFT, Clustal Omega, T-Coffee, MUSCLE**) and include the **Rfam reference** MSA.
+- **Compute descriptive metrics** for each alignment **and SP score against the reference**.
+- **Build pairwise features** as antisymmetric deltas **(metric(tool1) − metric(tool2))**.
+- **Label each pair** by the **SP difference**: label=1 if tool1 has higher SP than tool2, otherwise 0.
+- **Train logistic regression** (**L2 regularization, no intercept, no interactions**); **sigmoid calibration** with **5-fold CV**.
 - **Evaluate** with **precision/coverage** at confidence thresholds; include model/result plots.
 
 ## Prerequisites

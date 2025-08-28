@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 """
-compute_sp_alltools.py (Stockholm-as-reference, BP_compat removed)
+compute_sp_alltools.py (SP-only)
 
 - Uses per-family Rfam Stockholm (.sto/.stockholm/.stk) as the reference MSA.
 - Computes:
-    SP        : classic sum-of-pairs vs reference
-    SP_stem   : SP restricted to base-paired columns (from SS_cons)
-    SP_loop   : SP restricted to unpaired columns
+    SP : classic sum-of-pairs vs. the reference
 
 Outputs CSV with columns:
-  family, tool, SP, SP_stem, SP_loop
+  family, tool, SP, error
 
 Requirements: biopython, pandas
 """
 
-import os, glob, argparse, warnings
+import os, argparse, warnings
 from pathlib import Path
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -59,7 +57,7 @@ def _normalize_gaps(aln):
 def _align_intersection_by_id(ref_aln, test_aln):
     """Return (ref_sub, test_sub) aligned on the intersection of IDs, ref order."""
     ref_ids = [_sanitize_id(r.id) for r in ref_aln]
-    tmap = { _sanitize_id(r.id): r for r in test_aln }
+    tmap = {_sanitize_id(r.id): r for r in test_aln}
     shared = [rid for rid in ref_ids if rid in tmap]
     if len(shared) < 2:
         return None, None
@@ -103,9 +101,9 @@ def _test_res_idx_to_col(aln):
         mapping.append(idx2col)
     return mapping
 
-def sum_of_pairs_score(ref, test, col_mask=None):
+def sum_of_pairs_score(ref, test):
     """
-    SP = (# residue pairs co-aligned in both ref & test) / (# residue pairs in ref subset)
+    SP = (# residue pairs co-aligned in both ref & test) / (# residue pairs in ref)
     Assumes ref and test have the same sequences in the same order.
     """
     if len(ref) != len(test):
@@ -114,13 +112,10 @@ def sum_of_pairs_score(ref, test, col_mask=None):
     L = ref.get_alignment_length()
     ref_map  = _ref_col_to_res_idx(ref)
     test_map = _test_res_idx_to_col(test)
-    if col_mask is None:
-        col_mask = [True]*L
+
     N_ref = 0
     N_corr = 0
     for c in range(L):
-        if not col_mask[c]:
-            continue
         seq_idxs = [i for i in range(n) if ref_map[i][c] is not None]
         m = len(seq_idxs)
         if m < 2:
@@ -137,49 +132,8 @@ def sum_of_pairs_score(ref, test, col_mask=None):
             for cnt in counts.values():
                 if cnt > 1:
                     N_corr += cnt * (cnt - 1) // 2
+
     return (N_corr / N_ref) if N_ref else 0.0
-
-# ---------------- SS_cons parsing ----------------
-
-BR_OPENS = "([{<"
-BR_CLOSE = ")]}>"
-OPEN_TO_CLOSE = dict(zip(BR_OPENS, BR_CLOSE))
-CLOSE_TO_OPEN = dict(zip(BR_CLOSE, BR_OPENS))
-
-def read_ss_cons(stockholm_path):
-    """Extract concatenated SS_cons string from a per-family Stockholm file (binary-safe)."""
-    ss_lines = []
-    try:
-        with open(stockholm_path, "rb") as f:
-            for raw in f:
-                if raw.startswith(b"#=GC SS_cons"):
-                    parts = raw.rstrip().split(None, 2)
-                    if len(parts) >= 3:
-                        ss_lines.append(parts[2].decode("ascii", errors="ignore"))
-    except Exception as e:
-        warnings.warn(f"Failed to read SS_cons from {stockholm_path}: {e}")
-        return None
-    return "".join(ss_lines) if ss_lines else None
-
-def paired_columns_from_ss(ss):
-    """Return (stem_mask, pairs) from SS_cons; ignores pseudoknot letters."""
-    if not ss:
-        return None, []
-    L = len(ss)
-    stem_mask = [False]*L
-    pairs = []
-    stacks = {op:[] for op in BR_OPENS}
-    for i,ch in enumerate(ss):
-        if ch in OPEN_TO_CLOSE:
-            stacks[ch].append(i)
-        elif ch in CLOSE_TO_OPEN:
-            op = CLOSE_TO_OPEN[ch]
-            if stacks[op]:
-                j = stacks[op].pop()
-                a, b = j, i
-                pairs.append((a,b))
-                stem_mask[a] = stem_mask[b] = True
-    return stem_mask, pairs
 
 # ---------------- worker ----------------
 
@@ -189,40 +143,29 @@ def score_one(task):
         ref = AlignIO.read(sto_path, "stockholm")
         ref = _normalize_gaps(ref)
     except Exception as e:
-        return {"family": fam, "tool": tool, "SP": None, "SP_stem": None, "SP_loop": None, "error": f"read_ref_fail:{e}"}
+        return {"family": fam, "tool": tool, "SP": None, "error": f"read_ref_fail:{e}"}
 
     try:
         test = AlignIO.read(test_path, "fasta")
         test = _normalize_gaps(test)
     except Exception as e:
-        return {"family": fam, "tool": tool, "SP": None, "SP_stem": None, "SP_loop": None, "error": f"read_test_fail:{e}"}
+        return {"family": fam, "tool": tool, "SP": None, "error": f"read_test_fail:{e}"}
 
     ref2, test2 = _align_intersection_by_id(ref, test)
     if ref2 is None:
-        return {"family": fam, "tool": tool, "SP": None, "SP_stem": None, "SP_loop": None, "error": "no_shared_ids"}
-
-    ss = read_ss_cons(sto_path)
-    ss_mask, _ss_pairs = paired_columns_from_ss(ss) if ss else (None, [])
+        return {"family": fam, "tool": tool, "SP": None, "error": "no_shared_ids"}
 
     try:
         sp_all = sum_of_pairs_score(ref2, test2)
-        if ss_mask and len(ss_mask) == ref2.get_alignment_length():
-            sp_stem = sum_of_pairs_score(ref2, test2, col_mask=ss_mask)
-            loop_mask = [not x for x in ss_mask]
-            sp_loop = sum_of_pairs_score(ref2, test2, col_mask=loop_mask)
-        else:
-            sp_stem = None
-            sp_loop = None
-
-        return {"family": fam, "tool": tool, "SP": sp_all, "SP_stem": sp_stem, "SP_loop": sp_loop}
+        return {"family": fam, "tool": tool, "SP": sp_all, "error": None}
     except Exception as e:
-        return {"family": fam, "tool": tool, "SP": None, "SP_stem": None, "SP_loop": None, "error": f"sp_fail:{e}"}
+        return {"family": fam, "tool": tool, "SP": None, "error": f"sp_fail:{e}"}
 
 # ---------------- main ----------------
 
 def main():
-    ap = argparse.ArgumentParser(description="Compute SP (and stem/loop variants) using Rfam Stockholm as reference.")
-    ap.add_argument("--ref-stockholm", required=True, help="Dir with per-family RFxxxxx.sto/.stockholm/.stk files")
+    ap = argparse.ArgumentParser(description="Compute SP using Rfam Stockholm as reference (SP-only).")
+    ap.add_argument("--ref-stockholm", required=True, help="Dir with per-family RFxxxxx .sto/.stockholm/.stk files")
     ap.add_argument("--clustal", required=True, help="Directory of Clustal alignments")
     ap.add_argument("--mafft", required=True, help="Directory of MAFFT alignments")
     ap.add_argument("--tcoffee", required=True, help="Directory of T-Coffee alignments")
@@ -267,7 +210,9 @@ def main():
         for fu in as_completed(futs):
             results.append(fu.result())
 
-    pd.DataFrame(results).to_csv(args.out, index=False)
+    # Order columns deterministically
+    cols = ["family", "tool", "SP", "error"]
+    pd.DataFrame(results)[cols].to_csv(args.out, index=False)
     print(f"✔ Wrote {len(results)} rows to {args.out}")
 
 if __name__ == "__main__":
